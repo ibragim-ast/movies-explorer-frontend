@@ -1,13 +1,15 @@
 import React from "react";
 
 import Header from "../Header/Header";
+import Promo from "./Promo/Promo";
 
 const Main = () => {
-    return (
-        <>
-        <Header />
-        </>
-    )
-}
+  return (
+    <>
+      <Header />
+      <Promo />
+    </>
+  );
+};
 
 export default Main;
