@@ -1,0 +1,97 @@
+.about {
+  background-color: #202020;
+}
+
+.about__container {
+  height: 608px;
+  max-width: 89%;
+  margin: 0 auto;
+}
+
+.about__title {
+  font-size: 22px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.88px;
+  margin: 0;
+  padding: 112px 0 22px;
+}
+
+.about__cards-container {
+  border-top: 1px solid #dadada;
+  display: flex;
+  flex-direction: row;
+  column-gap: 52px;
+}
+
+.about__card {
+  margin-top: 70px;
+}
+
+.about__card-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: -0.8px;
+}
+
+.about__card-text {
+  margin: 25px 0 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+.about__time-scale {
+  display: flex;
+  flex-direction: row;
+  margin-top: 112px;
+}
+
+.about__one-week {
+  margin: 0;
+  color: #000;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #3ddc84;
+  padding: 9px 84px;
+}
+
+.about__four-week {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #303030;
+  padding: 9px 424px;
+}
+
+.about__tech {
+  display: flex;
+  flex-direction: row;
+  margin-top: 7px;
+}
+
+.about__back {
+  color: #8b8b8b;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  padding: 9px 78px;
+  margin: 0;
+}
+
+.about__front {
+  color: #8b8b8b;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  padding: 9px 424px;
+  margin: 0;
+}

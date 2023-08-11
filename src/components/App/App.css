@@ -1,13 +1,14 @@
 .app {
-    font-family: "Inter", Arial, Helvetica, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    color: #fff;
-    position: relative;
-    max-width: 1280px;
-    min-width: 320px;
-  }
-  
-  .app__input {
-    margin-bottom: 2px;
-  }
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #fff;
+  position: relative;
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+.app__input {
+  margin-bottom: 2px;
+}
