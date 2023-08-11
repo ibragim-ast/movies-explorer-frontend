@@ -1,11 +1,12 @@
 .about {
   background-color: #202020;
+  height: 608px;
 }
 
 .about__container {
-  height: 608px;
   max-width: 89%;
   margin: 0 auto;
+  padding-top: 112px;
 }
 
 .about__title {
@@ -18,7 +19,6 @@
 }
 
 .about__cards-container {
-  border-top: 1px solid #dadada;
   display: flex;
   flex-direction: row;
   column-gap: 52px;
