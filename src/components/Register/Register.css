@@ -1,0 +1,22 @@
+.register {
+  background-color: #202020;
+  height: 100vh;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+.regiter__container {
+  max-width: 31%;
+  margin: 0 auto;
+}
+
+.register__logo {
+  margin: 70px 0 20px;
+}
+
+.register__title {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+}

@@ -7,18 +7,16 @@ export default function Header() {
     <header className="header">
       <div className="header__container">
         <img className="header__logo" src={logo} alt="Логотип" />
-        <ul className="header__links">
-          <li>
-            <Link className="header__link header__register-link" to="/sign-up">
+        <div className="header__links">
+          <Link to="/sign-up">
+            <button className="header__link header__register-link">
               Регистрация
-            </Link>
-          </li>
-          <li>
-            <Link className="header__link header__login-link" to="/sign-in">
-              Войти
-            </Link>
-          </li>
-        </ul>
+            </button>
+          </Link>
+          <Link to="/sign-in">
+            <button className="header__link header__login-link">Войти</button>
+          </Link>
+        </div>
       </div>
     </header>
   );
