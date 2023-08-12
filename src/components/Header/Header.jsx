@@ -9,12 +9,14 @@ export default function Header() {
         <img className="header__logo" src={logo} alt="Логотип" />
         <ul className="header__links">
           <li>
-            <Link className="header__link header__register-link">
+            <Link className="header__link header__register-link" to="/sign-up">
               Регистрация
             </Link>
           </li>
           <li>
-            <Link className="header__link header__login-link">Войти</Link>
+            <Link className="header__link header__login-link" to="/sign-in">
+              Войти
+            </Link>
           </li>
         </ul>
       </div>
