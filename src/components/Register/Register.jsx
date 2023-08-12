@@ -36,7 +36,7 @@ export default function Register() {
         </form>
         <div className="register__message">
           <p>Уже зарегистрированы?</p>
-          <Link className="login-link" to="/sign-in">
+          <Link className="login-link" to="/signin">
             Войти
           </Link>
         </div>

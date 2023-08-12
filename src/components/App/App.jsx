@@ -3,6 +3,7 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Main from "../Main/Main";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import auth from "../../utils/Auth.js";
 import "./App.css";
 
@@ -25,13 +26,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route
-          path="/sign-up"
+          path="/signup"
           element={<Register onSubmit={handleRegister} />}
         ></Route>
-        <Route
-          path="/sign-in"
-          element={<Login onSubmit={handleRegister} />}
-        ></Route>
+        <Route path="/signin" element={<Login />}></Route>
+        <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
     </div>
   );

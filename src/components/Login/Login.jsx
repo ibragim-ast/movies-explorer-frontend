@@ -27,7 +27,7 @@ export default function Login() {
         </form>
         <div className="login__message">
           <p>Ещё не зарегистрированы?</p>
-          <Link className="login-link" to="/sign-up">
+          <Link className="login-link" to="/signup">
             Регистрация
           </Link>
         </div>
