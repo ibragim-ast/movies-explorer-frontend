@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Main from "../Main/Main";
 import Register from "../Register/Register";
+import Login from "../Login/Login";
 import auth from "../../utils/Auth.js";
 import "./App.css";
 
@@ -26,6 +27,10 @@ function App() {
         <Route
           path="/sign-up"
           element={<Register onSubmit={handleRegister} />}
+        ></Route>
+        <Route
+          path="/sign-in"
+          element={<Login onSubmit={handleRegister} />}
         ></Route>
       </Routes>
     </div>

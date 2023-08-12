@@ -1,36 +1,36 @@
-.register {
+.login {
   background-color: #202020;
   height: 100vh;
   width: 1280px;
 }
 
-.register__container {
+.login__container {
   max-width: 31%;
   margin: 0 auto;
 }
 
-.register__logo {
+.login__logo {
   margin-top: 71px;
 }
 
-.register__form {
+.login__form {
   margin-top: 36px;
 }
 
-.register__title {
+.login__title {
   font: 500 24px / normal "Inter";
 }
 
-.register__form-container {
+.login__form-container {
   margin-top: 35px;
 }
 
-.register__input-title {
+.login__input-title {
   color: #8b8b8b;
   font: 400 10px / normal "Inter";
 }
 
-.register__input {
+.login__input {
   width: 100%;
   border: none;
   background-color: transparent;
@@ -39,23 +39,23 @@
   font: 400 14px/2 "Inter";
 }
 
-.register__input:focus,
+.login__input:focus,
 textarea:focus {
   outline: none;
 }
 
-.register__input-error {
+.login__input-error {
   color: #ee3465;
   font: 400 10px / normal "Inter";
 }
 
-.register__message {
+.login__message {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.register__message p {
+.login__message p {
   margin-right: 7px;
   color: #8b8b8b;
   text-align: center;
@@ -69,11 +69,11 @@ textarea:focus {
   text-decoration: none;
 }
 
-.register__input-container {
+.login__input-container {
   margin-top: 19px;
 }
 
-.register__submit-btn {
+.login__submit-btn {
   margin: 152px 0 3px;
   width: 100%;
   height: 45px;
