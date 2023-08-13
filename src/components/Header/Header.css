@@ -8,8 +8,15 @@
   max-width: 89%;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   height: 100%;
+  align-items: center;
+}
+
+.header__nav-panel {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
   align-items: center;
 }
 

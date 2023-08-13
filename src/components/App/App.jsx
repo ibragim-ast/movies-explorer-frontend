@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Main from "../Main/Main";
+import Movies from "../Movies/Movies";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import Profile from "../Profile/Profile";
@@ -32,6 +33,7 @@ function App() {
         ></Route>
         <Route path="/signin" element={<Login />}></Route>
         <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/movies" element={<Movies />}></Route>
         <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
     </div>
