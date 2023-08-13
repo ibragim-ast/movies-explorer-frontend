@@ -1,0 +1,30 @@
+.account-button__btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+  flex-direction: row;
+  background-color: transparent;
+  border: none;
+}
+
+.account-button__text {
+  margin: 0;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 12px;
+}
+
+.account-button__img {
+  background-color: #313131;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .account-button__btn {
+    display: none;
+  }
+}

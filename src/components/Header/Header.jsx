@@ -1,5 +1,7 @@
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import NavTab from "../NavTab/NavTab";
+import AuthLinks from "../AuthLinks/AuthLinks";
+import AccountButton from "../AccountButton/AccountButton";
 import logo from "../../images/logo.svg";
 import "./Header.css";
 
@@ -16,16 +18,7 @@ export default function Header() {
         <img className="header__logo" src={logo} alt="Логотип" />
         <div className="header__nav-panel">
           {shouldShowNavTab && <NavTab />}
-          <div className="header__links">
-            <Link to="/signup">
-              <button className="header__link header__register-link">
-                Регистрация
-              </button>
-            </Link>
-            <Link to="/signin">
-              <button className="header__link header__login-link">Войти</button>
-            </Link>
-          </div>
+          {shouldShowNavTab ? <AccountButton /> : <AuthLinks />}
         </div>
       </div>
     </header>
