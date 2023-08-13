@@ -1,0 +1,95 @@
+.profile {
+  height: 100vh;
+  background-color: #202020;
+  box-sizing: border-box;
+}
+
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 89%;
+  margin: 0 auto;
+}
+
+.profile__title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: normal;
+  margin-top: 75px;
+}
+
+.profile__form {
+  width: 36%;
+}
+
+.profile__input-container {
+  position: relative;
+  width: 100%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin: 95px 0 0;
+  padding: 0;
+  margin-bottom: 208px;
+}
+
+.profile__input-label {
+  position: absolute;
+  top: 5px;
+  left: -6px;
+  padding: 6px;
+  font-size: 11px;
+  line-height: 1.5;
+  color: #fff;
+  pointer-events: none;
+  transition: top 0.2s ease, font-size 0.2s ease;
+}
+
+.profile__input-label:nth-of-type(2) {
+  top: 54px;
+}
+
+.profile__input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: #fff;
+  font: 500 11px/2 "Inter";
+  flex-basis: 40px;
+  border-bottom: 1px solid #424242;
+  text-align: right;
+}
+
+.profile__input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.profile__input::placeholder {
+  text-align: left;
+}
+
+.profile__input:last-child {
+  border: none;
+}
+
+.profile__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__button {
+  color: #fff;
+  border: none;
+  background-color: transparent;
+  text-align: center;
+  font: 500 13px / normal "Inter";
+}
+
+.profile__button_red-text {
+  color: #ee3465;
+  margin-top: 13px;
+}
