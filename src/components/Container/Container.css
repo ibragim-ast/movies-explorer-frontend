@@ -1,9 +1,9 @@
 .container {
-  max-width: 100%;
+  max-width: 89%;
 }
 
 .app__container {
-  margin: auto;
+  margin: 0 auto;
 }
 
 @media (max-width: 1024px) {

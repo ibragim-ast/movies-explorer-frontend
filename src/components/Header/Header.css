@@ -1,22 +1,24 @@
 .header {
   height: 74px;
-  background-color: #073042;
-  margin-bottom: -1px;
+  display: flex;
+  flex-direction: row;
 }
 
 .header__container {
-  max-width: 89%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
   height: 100%;
   align-items: center;
+  justify-content: space-between;
 }
 
-.header__nav-panel {
+.header__nav {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 100%;
+  align-items: center;
 }
 
 .header__link {
