@@ -13,8 +13,10 @@ export default function Header() {
     location.pathname
   );
 
+  const isHomePage = location.pathname === "/";
+
   return (
-    <header className="header">
+    <header className={`header ${isHomePage ? "header_main" : ""}`}>
       <div className="header__container">
         <nav className="header__nav">
           <Link className="header__linked-logo" to="/">

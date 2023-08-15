@@ -1,5 +1,5 @@
 .promo {
-  max-width: 1280px;
+  position: relative;
   height: 561px;
   background-color: #073042;
 }
@@ -15,7 +15,8 @@
   padding-left: 70px;
 }
 
-.promo__svg {
-  margin-left: 488px;
-  margin-top: 102px;
+.promo__pattern {
+  position: absolute;
+  top: 256px;
+  right: 71px;
 }

@@ -1,6 +1,6 @@
 .profile {
-  height: 100vh;
-  background-color: #202020;
+  max-width: 89%;
+  margin: 0 auto;
   box-sizing: border-box;
 }
 
@@ -9,7 +9,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 89%;
   margin: 0 auto;
 }
 
