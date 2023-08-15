@@ -5,6 +5,7 @@ import "./MoviesCardList.css";
 export default function MoviesCardList({ exampleMovies }) {
   const itemsPerPage = 12;
   const [visibleItems, setVisibleItems] = useState(itemsPerPage);
+  const remainingItems = exampleMovies.length - visibleItems;
 
   const showMoreItems = () => {
     setVisibleItems((prev) => prev + itemsPerPage);
@@ -24,7 +25,12 @@ export default function MoviesCardList({ exampleMovies }) {
         ))}
       </ul>
       <div className="movies-card__more">
-        <button className="movies-card__more-btn" onClick={showMoreItems}>
+        <button
+          className="movies-card__more-btn"
+          onClick={showMoreItems}
+          disabled={remainingItems <= 0}
+          type="submit"
+        >
           Еще
         </button>
       </div>

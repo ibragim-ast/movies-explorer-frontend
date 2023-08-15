@@ -2,9 +2,9 @@ import Header from "../Header/Header";
 import SearchForm from "../SearchForm/SearchForm";
 import MoviesCardList from "../MoviesCardList/MoviesCardList.jsx";
 import Footer from "../Footer/Footer";
-import "./Movies.css";
+import "./SavedMovies.css";
 
-export default function Movies({ exampleMovies }) {
+const SavedMovies = ({ exampleMovies }) => {
   return (
     <section className="movies">
       <Header />
@@ -15,4 +15,6 @@ export default function Movies({ exampleMovies }) {
       <Footer />
     </section>
   );
-}
+};
+
+export default SavedMovies;

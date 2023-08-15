@@ -42,10 +42,6 @@
   width: 24px;
   border: none;
   background-color: transparent;
-  background-image: url("../../../images/like.png");
   background-repeat: no-repeat;
-}
-
-.movies-card__btn_not-save {
-  background-image: url("../../../images/dislike.png");
+  margin-right: 6px;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import account from "../../images/account.svg";
+import Icons from "../Icons";
 import "./AccountButton.css";
 
 const AccountButton = () => {
@@ -13,7 +13,7 @@ const AccountButton = () => {
   return (
     <button className={`account-button__btn`} onClick={redirectToProfile}>
       <p className="account-button__text">Аккаунт</p>
-      <img className="account-button__img" src={account} alt="Аккаунт" />
+      <Icons.Account className={"account-button__img"} />
     </button>
   );
 };
