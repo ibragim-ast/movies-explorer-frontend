@@ -1,5 +1,5 @@
 import Title from "../Main/Title/Title";
-import photo from "../../images/photo.svg";
+import photo from "../../assets/images/photo.svg";
 import "./AboutMe.css";
 import Portfolio from "../Main/Portfolio/Portfolio";
 

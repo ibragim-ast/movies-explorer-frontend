@@ -1,4 +1,4 @@
-import logo from "../../images/logo.svg";
+import logo from "../../assets/images/logo.svg";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
 import "./Register.css";

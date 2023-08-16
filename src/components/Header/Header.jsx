@@ -3,7 +3,7 @@ import NavTab from "../NavTab/NavTab";
 import AuthLinks from "../AuthLinks/AuthLinks";
 import AccountButton from "../AccountButton/AccountButton";
 
-import logo from "../../images/logo.svg";
+import logo from "../../assets/images/logo.svg";
 import "./Header.css";
 
 export default function Header() {
