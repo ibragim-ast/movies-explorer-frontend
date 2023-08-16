@@ -14,18 +14,18 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/signup" element={<Register />}></Route>
-        <Route path="/signin" element={<Login />}></Route>
-        <Route path="/profile" element={<Profile />}></Route>
+        <Route path="/profile" element={<Profile />} />
         <Route
           path="/movies"
           element={<Movies exampleMovies={exampleMovies} />}
-        ></Route>
+        />
         <Route
           path="/saved-movies"
           element={<SavedMovies exampleMovies={savedMovies} />}
-        ></Route>
-        <Route path="*" element={<PageNotFound />}></Route>
+        />
+        <Route path="/signup" element={<Register />} />
+        <Route path="/signin" element={<Login />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>
   );
