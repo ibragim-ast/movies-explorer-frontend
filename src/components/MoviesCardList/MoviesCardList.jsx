@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import Button from "../Button/Button";
 import "./MoviesCardList.css";
@@ -6,10 +7,14 @@ import "./MoviesCardList.css";
 export default function MoviesCardList({ exampleMovies }) {
   const itemsPerPage = 12;
   const [visibleItems, setVisibleItems] = useState(itemsPerPage);
+  const location = useLocation();
 
+  const isMoviesSavedPage = location.pathname === "/saved-movies";
   const showMoreItems = () => {
     setVisibleItems((prev) => prev + itemsPerPage);
   };
+
+  console.log(isMoviesSavedPage);
 
   return (
     <div className="movies-cards">
@@ -24,9 +29,11 @@ export default function MoviesCardList({ exampleMovies }) {
           />
         ))}
       </ul>
-      <div className="movies-card__more">
-        <Button modifier="more" text="Еще" handler={showMoreItems} />
-      </div>
+      {!isMoviesSavedPage && (
+        <div className="movies-card__more">
+          <Button modifier="more" text="Еще" handler={showMoreItems} />
+        </div>
+      )}
     </div>
   );
 }

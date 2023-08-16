@@ -4,13 +4,6 @@ import Button from "../Button/Button";
 import "./Login.css";
 
 export default function Login({ onLogin }) {
-  const { values, errors, handleChange, resetForm, isValid } =
-    useFormValidator("login__form");
-
-  const handleLogin = (values) => {
-    onLogin(values);
-  };
-
   return (
     <section className="login">
       <div className="login__container">
