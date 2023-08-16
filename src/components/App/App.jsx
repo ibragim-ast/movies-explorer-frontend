@@ -1,14 +1,13 @@
-import React from "react";
+import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Main from "../Main/Main";
-import Movies from "../Movies/Movies";
-import SavedMovies from "../SavedMovies/SavedMovies";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
 import Profile from "../Profile/Profile";
-import ErrorPage from "../ErrorPage/ErrorPage";
+import Movies from "../Movies/Movies";
+import SavedMovies from "../SavedMovies/SavedMovies";
+import PageNotFound from "../PageNotFound/PageNotFound";
 import { exampleMovies, savedMovies } from "../../utils/constants";
-import "./App.css";
 
 function App() {
   return (
@@ -26,7 +25,7 @@ function App() {
           path="/saved-movies"
           element={<SavedMovies exampleMovies={savedMovies} />}
         ></Route>
-        <Route path="*" element={<ErrorPage />}></Route>
+        <Route path="*" element={<PageNotFound />}></Route>
       </Routes>
     </div>
   );
