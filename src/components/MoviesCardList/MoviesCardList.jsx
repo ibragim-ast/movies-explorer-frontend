@@ -1,11 +1,11 @@
 import { useState } from "react";
 import MoviesCard from "../MoviesCard/MoviesCard";
+import Button from "../Button/Button";
 import "./MoviesCardList.css";
 
 export default function MoviesCardList({ exampleMovies }) {
   const itemsPerPage = 12;
   const [visibleItems, setVisibleItems] = useState(itemsPerPage);
-  const remainingItems = exampleMovies.length - visibleItems;
 
   const showMoreItems = () => {
     setVisibleItems((prev) => prev + itemsPerPage);
@@ -25,14 +25,7 @@ export default function MoviesCardList({ exampleMovies }) {
         ))}
       </ul>
       <div className="movies-card__more">
-        <button
-          className="movies-card__more-btn"
-          onClick={showMoreItems}
-          disabled={remainingItems <= 0}
-          type="submit"
-        >
-          Еще
-        </button>
+        <Button modifier="more" text="Еще" handler={showMoreItems} />
       </div>
     </div>
   );

@@ -1,8 +1,16 @@
 import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 import "./Login.css";
 
-export default function Login() {
+export default function Login({ onLogin }) {
+  const { values, errors, handleChange, resetForm, isValid } =
+    useFormValidator("login__form");
+
+  const handleLogin = (values) => {
+    onLogin(values);
+  };
+
   return (
     <section className="login">
       <div className="login__container">
@@ -21,9 +29,7 @@ export default function Login() {
               <span className="login__input-error"></span>
             </div>
           </div>
-          <button className="login__submit-btn" type="submit">
-            Войти
-          </button>
+          <Button className="register__submit-btn" text="Войти" />
         </form>
         <div className="login__message">
           <p>Ещё не зарегистрированы?</p>

@@ -92,3 +92,7 @@ textarea:focus {
   color: #ee3465;
   margin-top: 13px;
 }
+
+.profile__button_disabled {
+  display: none;
+}

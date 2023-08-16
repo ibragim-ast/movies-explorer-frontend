@@ -22,7 +22,7 @@
 }
 
 .register__form-container {
-  margin-top: 35px;
+  margin: 35px 0 152px;
 }
 
 .register__input-title {
@@ -71,16 +71,4 @@ textarea:focus {
 
 .register__input-container {
   margin-top: 19px;
-}
-
-.register__submit-btn {
-  margin: 152px 0 3px;
-  width: 100%;
-  height: 45px;
-  border-radius: 3px;
-  background: #4285f4;
-  color: #fff;
-  text-align: center;
-  font: 500 14px / normal "Inter";
-  border: none;
 }
