@@ -5,7 +5,7 @@ import Button from "../Button/Button";
 import "./MoviesCardList.css";
 
 export default function MoviesCardList({ exampleMovies }) {
-  const itemsPerPage = 12;
+  const itemsPerPage = 16;
   const [visibleItems, setVisibleItems] = useState(itemsPerPage);
   const location = useLocation();
 

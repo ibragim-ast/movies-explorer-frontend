@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import Icons from "../Icons";
+import deleteIcon from "../../assets/images/delete-icon.svg";
+import saveIcon from "../../assets/images/save-icon.svg";
+import saveRedIcon from "../../assets/images/saveRed-icon.svg";
 import "./MoviesCard.css";
 
 const MoviesCard = ({ movieId, duration, image, name }) => {
@@ -48,11 +50,11 @@ const MoviesCard = ({ movieId, duration, image, name }) => {
               onClick={handleMoviesSave}
             >
               {isMoviesSavedPage ? (
-                <Icons.Delete />
+                <img src={deleteIcon} alt="удалить" />
               ) : isSaved ? (
-                <Icons.Save />
+                <img src={saveRedIcon} alt="сохранить" />
               ) : (
-                <Icons.UnSave />
+                <img src={saveIcon} alt="не сохранять" />
               )}
             </button>
           </div>

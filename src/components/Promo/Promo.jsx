@@ -1,4 +1,4 @@
-import Icons from "../Icons";
+import pattern from "../../assets/images/pattern.svg";
 import "./Promo.css";
 
 const Promo = () => {
@@ -8,7 +8,7 @@ const Promo = () => {
         <h1 className="promo__title">
           Учебный проект студента факультета Веб-разработки.
         </h1>
-        <Icons.Pattern className="promo__pattern" />
+        <img src={pattern} alt="узор" className="promo__pattern" />
       </div>
     </section>
   );

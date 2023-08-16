@@ -1,13 +1,13 @@
 import FitterCheckbox from "../FilterCheckbox/FitterCheckbox";
 import Button from "../Button/Button";
-import Icons from "../Icons";
+import searchIcon from "../../assets/images/search-icon.svg";
 import "./SearchForm.css";
 
 const SearchForm = () => {
   return (
     <form className="search-form" name="search-movie">
       <div className="search-form__string">
-        <Icons.Search className={"search-form__icon"} />
+        <img src={searchIcon} alt="поиск" className={"search-form__icon"} />
         <input
           className="search-form__input"
           type="film-query"
