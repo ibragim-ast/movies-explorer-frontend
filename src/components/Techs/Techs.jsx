@@ -13,7 +13,7 @@ export default function Techs() {
           На курсе веб-разработки мы освоили технологии, которые применили в
           дипломном проекте.
         </p>
-        <ul className="techs__icons">
+        <ul className="techs__list">
           {stack.map((tech) => (
             <TechIcon key={tech} title={tech} />
           ))}
