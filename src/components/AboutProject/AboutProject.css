@@ -88,3 +88,33 @@
 .about-project__fullstack_type_front {
   width: 80%;
 }
+
+@media (max-width: 767px) {
+  .about-project {
+    padding: 91px 0 84px;
+    max-width: 87%;
+  }
+  .about-project__cards-container {
+    column-gap: 40px;
+  }
+  .about-project__card-text {
+    margin-top: 21px;
+    font-size: 12px;
+    line-height: 18px;
+  }
+  .about-project__roadmap-scale {
+    margin-top: 94px;
+  }
+  .about-project__info_type_one-week {
+    width: 21.2%;
+  }
+  .about-project__info_type_four-week {
+    width: 78.8%;
+  }
+  .about-project__fullstack_type_back {
+    width: 21.2%;
+  }
+  .about-project__fullstack_type_front {
+    width: 78.8%;
+  }
+}

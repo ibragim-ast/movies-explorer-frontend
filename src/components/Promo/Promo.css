@@ -13,14 +13,14 @@
   font-weight: 400;
   line-height: 52px;
   letter-spacing: -1.6px;
-  padding-top: 52px;
-  padding-left: 70px;
+  padding: 52px 0 0 70px;
 }
 
 @media (max-width: 767px) {
   .promo {
-    background-position: 50% 94%;
+    background-position: 50% 88.5%;
     background-size: 680px 230px;
+    padding-bottom: 439px;
   }
   .promo__title {
     text-align: center;
