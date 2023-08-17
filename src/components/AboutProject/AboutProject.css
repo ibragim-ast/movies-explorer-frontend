@@ -1,11 +1,11 @@
-.about {
+.about-project {
   background-color: #202020;
   margin: 0 auto;
   max-width: 89%;
   padding: 110px 0 103px;
 }
 
-.about__title {
+.about-project__title {
   font-size: 22px;
   font-weight: 400;
   line-height: normal;
@@ -14,17 +14,17 @@
   padding: 112px 0 22px;
 }
 
-.about__cards-container {
+.about-project__cards-container {
   display: flex;
   flex-direction: row;
   column-gap: 52px;
 }
 
-.about__card {
+.about-project__card {
   margin-top: 70px;
 }
 
-.about__card-title {
+.about-project__card-title {
   margin: 0;
   font-size: 20px;
   font-weight: 400;
@@ -32,60 +32,46 @@
   letter-spacing: -0.8px;
 }
 
-.about__card-text {
+.about-project__card-text {
   margin: 25px 0 0 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;
 }
 
-.about__time-scale {
+.about-project__roadmap-scale {
   display: flex;
   flex-direction: row;
   margin-top: 112px;
 }
 
-.about__one-week {
-  margin: 0;
-  color: #000;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-  background-color: #3ddc84;
-  padding: 9px 0;
-  width: 20%;
-}
-
-.about__four-week {
-  margin: 0;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: normal;
-  background-color: #303030;
-  padding: 9px 0;
-  width: 80%;
-}
-
-.about__tech {
+.about-project__roadmap-tech {
   display: flex;
   flex-direction: row;
   margin-top: 7px;
 }
 
-.about__back {
-  color: #8b8b8b;
+.about-project__info {
+  margin: 0;
   text-align: center;
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  padding: 7px 0;
-  margin: 0;
+  padding: 9px 0;
+}
+
+.about-project__info_type_one-week {
+  color: #000;
+  background-color: #3ddc84;
   width: 20%;
 }
 
-.about__front {
+.about-project__info_type_four-week {
+  background-color: #303030;
+  width: 80%;
+}
+
+.about-project__fullstack {
   color: #8b8b8b;
   text-align: center;
   font-size: 14px;
@@ -93,5 +79,12 @@
   line-height: normal;
   padding: 7px 0;
   margin: 0;
+}
+
+.about-project__fullstack_type_back {
+  width: 20%;
+}
+
+.about-project__fullstack_type_front {
   width: 80%;
 }
