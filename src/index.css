@@ -2,9 +2,11 @@
 @import url("./assets/fonts/inter.css");
 
 .page {
+  max-width: 1280px;
+  min-width: 320px;
+  margin: 0 auto;
   background-color: #202020;
   color: #fff;
-  min-width: 320px;
   font-family: "Inter", Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
