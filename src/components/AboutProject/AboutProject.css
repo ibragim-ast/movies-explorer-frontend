@@ -1,12 +1,8 @@
 .about {
   background-color: #202020;
-  height: 608px;
-}
-
-.about__container {
-  max-width: 89%;
   margin: 0 auto;
-  padding-top: 110px;
+  max-width: 89%;
+  padding: 110px 0 103px;
 }
 
 .about__title {
@@ -57,7 +53,8 @@
   font-weight: 400;
   line-height: normal;
   background-color: #3ddc84;
-  padding: 9px 84px;
+  padding: 9px 0;
+  width: 20%;
 }
 
 .about__four-week {
@@ -67,7 +64,8 @@
   font-weight: 400;
   line-height: normal;
   background-color: #303030;
-  padding: 9px 424px;
+  padding: 9px 0;
+  width: 80%;
 }
 
 .about__tech {
@@ -82,8 +80,9 @@
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  padding: 9px 78px;
+  padding: 7px 0;
   margin: 0;
+  width: 20%;
 }
 
 .about__front {
@@ -92,6 +91,7 @@
   font-size: 14px;
   font-weight: 400;
   line-height: normal;
-  padding: 9px 424px;
+  padding: 7px 0;
   margin: 0;
+  width: 80%;
 }
