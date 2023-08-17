@@ -3,6 +3,7 @@
 
 .page {
   background-color: #202020;
+  color: #fff;
   min-width: 320px;
   font-family: "Inter", Arial, sans-serif;
   -moz-osx-font-smoothing: grayscale;
