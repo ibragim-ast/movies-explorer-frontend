@@ -1,8 +1,4 @@
 .about-me {
-  height: 1079px;
-}
-
-.about-me__container {
   width: 89%;
   margin: 0 auto;
   padding-top: 110px;
@@ -52,4 +48,29 @@
   text-decoration: none;
   position: absolute;
   bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .about-me {
+    width: 87%;
+    padding-top: 91px;
+  }
+  .student__name {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1.6px;
+  }
+  .student__profession {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 16px 0 20px;
+  }
+  .student__description {
+    font-size: 12px;
+    line-height: 18px;
+    max-width: 364px;
+  }
+  .student__photo {
+    max-width: 253px;
+  }
 }
