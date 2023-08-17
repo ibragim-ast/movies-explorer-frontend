@@ -2,6 +2,9 @@
   position: relative;
   height: 561px;
   background-color: #073042;
+  background-image: url("../../assets/images/pattern.svg");
+  background-repeat: no-repeat;
+  background-position: 87.5% 81%;
 }
 
 .promo__title {
@@ -13,10 +16,4 @@
   letter-spacing: -1.6px;
   padding-top: 52px;
   padding-left: 70px;
-}
-
-.promo__pattern {
-  position: absolute;
-  top: 256px;
-  right: 71px;
 }
