@@ -1,7 +1,7 @@
-import Title from "../Main/Title/Title";
+import Title from "../Title/Title";
 import photo from "../../assets/images/photo.svg";
 import "./AboutMe.css";
-import Portfolio from "../Main/Portfolio/Portfolio";
+import Portfolio from "../Portfolio/Portfolio";
 
 export default function AboutMe() {
   return (

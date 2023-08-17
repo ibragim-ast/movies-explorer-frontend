@@ -16,16 +16,6 @@
   text-rendering: optimizeLegibility;
 }
 
-.page::-webkit-scrollbar {
-  width: 7px;
-}
-.page::-webkit-scrollbar-track {
-  background: #151515;
-}
-.page::-webkit-scrollbar-thumb {
-  background-color: #5d5d5d;
-}
-
 .link-hover {
   transition: opacity 0.3s;
   -webkit-tap-highlight-color: transparent;

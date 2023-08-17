@@ -1,6 +1,6 @@
 import Title from "../Title/Title";
 import TechIcon from "./TechIcon/TechIcon";
-import { stack } from "../../../utils/constants";
+import { stack } from "../../utils/constants";
 import "./Techs.css";
 
 export default function Techs() {
