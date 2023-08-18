@@ -336,7 +336,7 @@ const exampleMovies = [
       },  
   ];
 
-const MOVIES_PER_PAGE_LARGE = 12;
+const MOVIES_PER_PAGE_LARGE = 16;
 const MOVIES_PER_PAGE_MIDDLE = 8;
 const MOVIES_PER_PAGE_SMALL = 5;
 

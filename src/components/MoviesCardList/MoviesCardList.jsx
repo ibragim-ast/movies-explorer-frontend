@@ -42,8 +42,8 @@ const MoviesCardList = ({ exampleMovies }) => {
   }
 
   return (
-    <div className="movies-cards">
-      <ul className="movies-card__list">
+    <section className="movies-cards">
+      <div className="movies-card__list">
         {exampleMovies.slice(0, visibleItems).map((card) => (
           <MoviesCard
             key={card.movieId}
@@ -53,13 +53,11 @@ const MoviesCardList = ({ exampleMovies }) => {
             name={card.nameRU}
           />
         ))}
-      </ul>
+      </div>
       {!isMoviesSavedPage && (
-        <div className="movies-card__more">
-          <Button modifier="more" text="Еще" handler={showMoreItems} />
-        </div>
+        <Button modifier="more" text="Еще" handler={showMoreItems} />
       )}
-    </div>
+    </section>
   );
 };
 

@@ -21,7 +21,7 @@
   background-color: #2f2f2f;
   font-size: 12px;
   cursor: pointer;
-  margin: 42px 0 79px;
+  margin: 58px 0 79px;
 }
 
 .button_type_more:hover:not(:disabled) {
