@@ -2,3 +2,9 @@
   max-width: 89%;
   margin: 0 auto;
 }
+
+@media (max-width: 768px) {
+  .movies__container {
+    max-width: 92%;
+  }
+}

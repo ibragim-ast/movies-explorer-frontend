@@ -45,3 +45,12 @@
   background-color: #2be080;
   border: 1px solid #fff;
 }
+
+@media (max-width: 768px) {
+  .filter-checkbox__container {
+    margin-left: 70px;
+  }
+  .search-form__line {
+    margin-left: 22px;
+  }
+}

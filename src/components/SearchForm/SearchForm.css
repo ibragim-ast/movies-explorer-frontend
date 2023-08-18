@@ -27,11 +27,17 @@
   outline: none;
   color: #fff;
   margin: 0;
-  width: 759px;
+  width: 50%;
 }
 
 .search-form__line {
   border-left: 1px solid #424242;
   height: 40px;
   margin-left: 30px;
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    margin-top: 80px;
+  }
 }
