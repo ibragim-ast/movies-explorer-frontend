@@ -1,31 +1,23 @@
-import { Link, useLocation } from "react-router-dom";
-import NavTab from "../NavTab/NavTab";
-import AuthLinks from "../AuthLinks/AuthLinks";
-import AccountButton from "../AccountButton/AccountButton";
-
-import logo from "../../assets/images/logo.svg";
 import "./Header.css";
+import { Link, useLocation } from "react-router-dom";
+import logo from "../../assets/images/logo.svg";
+import Navigation from "../Navigation/Navigation";
+import AuthLinks from "../AuthLinks/AuthLinks";
 
-export default function Header() {
+const Header = () => {
   const location = useLocation();
-
-  const shouldShowNavTab = ["/movies", "/saved-movies", "/profile"].includes(
-    location.pathname
-  );
-
-  const isHomePage = location.pathname === "/";
+  const isLanding = location.pathname === "/";
 
   return (
-    <header className={`header ${isHomePage ? "header_main" : ""}`}>
+    <header className={`header ${isLanding ? "header_type_landing" : ""}`}>
       <div className="header__container">
-        <nav className="header__nav">
-          <Link className="header__linked-logo" to="/">
-            <img className="header__logo" src={logo} alt="Логотип" />
-          </Link>
-          <div className="header__links">{shouldShowNavTab && <NavTab />}</div>
-        </nav>
-        {shouldShowNavTab ? <AccountButton /> : <AuthLinks />}
+        <Link to="/" className="header__link button-hover">
+          <img className="header__logo" src={logo} alt="логотип" />
+        </Link>
+        {isLanding ? <AuthLinks /> : <Navigation />}
       </div>
     </header>
   );
-}
+};
+
+export default Header;

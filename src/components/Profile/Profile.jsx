@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "../Header/Header";
 import Button from "../Button/Button";
 import "./Profile.css";
+import { Link } from "react-router-dom";
 
 export default function Profile() {
   const [isEditing, setIsEditing] = useState(false);
@@ -47,13 +48,14 @@ export default function Profile() {
                 >
                   Редактировать
                 </button>
-                <button
+                <Link
+                  to="/"
                   className={`profile__button profile__button_red-text ${
                     isEditing ? "profile__button_disabled" : ""
                   }`}
                 >
                   Выйти из аккаунта
-                </button>
+                </Link>
               </>
             ) : (
               <Button modifier="profile" text="Сохранить" />
