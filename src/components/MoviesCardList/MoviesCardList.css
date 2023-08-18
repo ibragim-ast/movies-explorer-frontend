@@ -14,3 +14,14 @@
   padding: 0;
   margin-top: 80px;
 }
+
+@media (max-width: 768px) {
+  .movies-cards {
+    margin-top: 109px;
+  }
+  .movies-card__list {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+  }
+}
