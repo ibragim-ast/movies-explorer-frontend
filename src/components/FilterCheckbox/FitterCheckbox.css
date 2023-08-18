@@ -8,6 +8,7 @@
   line-height: 18px;
   font-weight: 400;
   position: relative;
+  -webkit-tap-highlight-color: none;
 }
 
 .filter-checkbox__label::after {
