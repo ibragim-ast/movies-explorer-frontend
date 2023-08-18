@@ -1,6 +1,6 @@
 import Title from "../Title/Title";
 import TechIcon from "./TechIcon/TechIcon";
-import { stack } from "../../utils/constants";
+import { STACK } from "../../utils/constants";
 import "./Techs.css";
 
 export default function Techs() {
@@ -14,7 +14,7 @@ export default function Techs() {
           дипломном проекте.
         </p>
         <ul className="techs__list">
-          {stack.map((tech) => (
+          {STACK.map((tech) => (
             <TechIcon key={tech} title={tech} />
           ))}
         </ul>

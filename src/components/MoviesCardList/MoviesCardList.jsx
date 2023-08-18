@@ -1,20 +1,45 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import Button from "../Button/Button";
+import {
+  MOVIES_PER_PAGE_LARGE,
+  MOVIES_PER_PAGE_MIDDLE,
+  MOVIES_PER_PAGE_SMALL,
+} from "../../utils/constants";
 import "./MoviesCardList.css";
 
-export default function MoviesCardList({ exampleMovies }) {
-  const itemsPerPage = 16;
-  const [visibleItems, setVisibleItems] = useState(itemsPerPage);
+const MoviesCardList = ({ exampleMovies }) => {
+  const [visibleItems, setVisibleItems] = useState(12);
   const location = useLocation();
-
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isMoviesSavedPage = location.pathname === "/saved-movies";
   const showMoreItems = () => {
-    setVisibleItems((prev) => prev + itemsPerPage);
+    setVisibleItems((prev) => prev + 4);
   };
 
-  console.log(isMoviesSavedPage);
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const checkWindowWidth = () => {
+      if (windowWidth >= 1280) {
+        setVisibleItems(MOVIES_PER_PAGE_LARGE);
+      } else if (windowWidth >= 768) {
+        setVisibleItems(MOVIES_PER_PAGE_MIDDLE);
+      } else {
+        setVisibleItems(MOVIES_PER_PAGE_SMALL);
+      }
+    };
+
+    checkWindowWidth();
+  }, [windowWidth]);
+
+  function handleResize() {
+    setWindowWidth(window.innerWidth);
+  }
 
   return (
     <div className="movies-cards">
@@ -36,4 +61,6 @@ export default function MoviesCardList({ exampleMovies }) {
       )}
     </div>
   );
-}
+};
+
+export default MoviesCardList;

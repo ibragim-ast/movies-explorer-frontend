@@ -1,4 +1,4 @@
-export const stack = [
+const STACK = [
     "HTML",
     "CSS",
     "JS",
@@ -8,7 +8,7 @@ export const stack = [
     "mongoDB",
 ];
 
-export const exampleMovies = [
+const exampleMovies = [
     {
       country: 'Country 1',
       director: 'Director 1',
@@ -291,7 +291,7 @@ export const exampleMovies = [
         },
   ];
   
-  export const savedMovies = [
+  const savedMovies = [
     {
       country: 'Country 1',
       director: 'Director 1',
@@ -335,3 +335,16 @@ export const exampleMovies = [
         nameEN: 'Movie Name EN 1',
       },  
   ];
+
+const MOVIES_PER_PAGE_LARGE = 12;
+const MOVIES_PER_PAGE_MIDDLE = 8;
+const MOVIES_PER_PAGE_SMALL = 5;
+
+export {
+  MOVIES_PER_PAGE_LARGE,
+  MOVIES_PER_PAGE_MIDDLE,
+  MOVIES_PER_PAGE_SMALL,
+  savedMovies,
+  exampleMovies,
+  STACK,
+}
