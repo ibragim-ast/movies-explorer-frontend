@@ -13,8 +13,8 @@ export default function Profile() {
 
   return (
     <>
+      <Header />
       <section className="profile">
-        <Header />
         <div className="profile__container">
           <h1 className="profile__title">Привет, Виталий!</h1>
           <form className="profile__form">

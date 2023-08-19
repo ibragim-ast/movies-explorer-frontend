@@ -1,5 +1,5 @@
 .profile {
-  max-width: 89%;
+  width: 89%;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -30,9 +30,8 @@
   border: none;
   display: flex;
   flex-direction: column;
-  margin: 95px 0 0;
+  margin: 95px 0 208px;
   padding: 0;
-  margin-bottom: 208px;
 }
 
 .profile__input-label {
@@ -86,6 +85,7 @@ textarea:focus {
   background-color: transparent;
   text-align: center;
   font: 500 13px / normal "Inter";
+  text-decoration: none;
 }
 
 .profile__button_red-text {
@@ -95,4 +95,16 @@ textarea:focus {
 
 .profile__button_disabled {
   display: none;
+}
+
+@media (max-width: 768px) {
+  .profile__container {
+    padding-top: 161px;
+  }
+  .profile__form {
+    width: 60%;
+  }
+  .profile__input-container {
+    margin: 68px 0 199px;
+  }
 }
