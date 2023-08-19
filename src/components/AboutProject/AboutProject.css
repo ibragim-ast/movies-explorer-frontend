@@ -118,3 +118,50 @@
     width: 78.8%;
   }
 }
+
+@media (max-width: 414px) {
+  .about-project {
+    padding-top: 71px;
+    max-width: 89%;
+  }
+  .about-project__cards-container {
+    flex-direction: column;
+    row-gap: 57px;
+    margin-top: 61px;
+  }
+  .about-project__card {
+    margin-top: 0;
+  }
+  .about-project__card-title {
+    font-size: 18px;
+    letter-spacing: -0.72px;
+  }
+  .about-project__card-text {
+    font-size: 11px;
+    line-height: 16px;
+    margin-top: 17px;
+  }
+  .about-project__roadmap-scale {
+    margin-top: 60px;
+  }
+  .about-project__info {
+    font-size: 11px;
+    padding: 10px 0;
+  }
+  .about-project__info_type_one-week {
+    width: 35.1%;
+  }
+  .about-project__info_type_four-week {
+    width: 64.9%;
+  }
+  .about-project__fullstack {
+    font-size: 11px;
+    padding-top: 3px;
+  }
+  .about-project__fullstack_type_back {
+    width: 35.1%;
+  }
+  .about-project__fullstack_type_front {
+    width: 64.9%;
+  }
+}

@@ -27,8 +27,8 @@
 }
 
 @media (max-width: 414px) {
-  ..auth-links {
-    gap: ;
+  .auth-links {
+    gap: 0;
   }
   .auth__link_type_login {
     padding: 5px 13px;
