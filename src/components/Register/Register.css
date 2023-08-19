@@ -1,11 +1,5 @@
 .register {
-  background-color: #202020;
-  height: 100vh;
-  width: 1280px;
-}
-
-.register__container {
-  max-width: 31%;
+  width: 396px;
   margin: 0 auto;
 }
 
@@ -22,7 +16,7 @@
 }
 
 .register__form-container {
-  margin: 35px 0 152px;
+  margin: 35px 0 154px;
 }
 
 .register__input-title {
@@ -71,4 +65,13 @@ textarea:focus {
 
 .register__input-container {
   margin-top: 19px;
+}
+
+@media (max-width: 768px) {
+  .register__logo {
+    margin-top: 231px;
+  }
+  .register__container {
+    width: 396px;
+  }
 }
