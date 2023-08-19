@@ -43,7 +43,11 @@ const MoviesCardList = ({ exampleMovies }) => {
 
   return (
     <section className="movies-cards">
-      <div className="movies-card__list">
+      <div
+        className={`movies-card__list ${
+          isMoviesSavedPage ? "movies-card__list_type_saved" : ""
+        }`}
+      >
         {exampleMovies.slice(0, visibleItems).map((card) => (
           <MoviesCard
             key={card.movieId}
