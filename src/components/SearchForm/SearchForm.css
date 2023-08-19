@@ -27,7 +27,7 @@
   outline: none;
   color: #fff;
   margin: 0;
-  width: 50%;
+  width: 66.7%;
 }
 
 .search-form__line {
@@ -39,5 +39,11 @@
 @media (max-width: 768px) {
   .search-form {
     margin-top: 80px;
+  }
+  .search-form__input {
+    width: 50.3%;
+  }
+  .search-form__line {
+    margin-left: 20px;
   }
 }
