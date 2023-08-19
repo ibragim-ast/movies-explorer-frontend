@@ -27,3 +27,17 @@
     padding-top: 301px;
   }
 }
+
+@media (max-width: 414px) {
+  .promo {
+    padding-bottom: 330px;
+    background-position: 50% 90%;
+  }
+  .promo__title {
+    font-size: 31px;
+    line-height: 39px;
+    letter-spacing: -1.24px;
+    padding: 0;
+    padding-top: 183px;
+  }
+}

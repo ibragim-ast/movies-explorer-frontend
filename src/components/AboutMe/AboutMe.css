@@ -74,3 +74,9 @@
     max-width: 253px;
   }
 }
+
+@media (max-width: 414px) {
+  .student {
+    flex-direction: column;
+  }
+}
