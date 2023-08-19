@@ -76,7 +76,33 @@
 }
 
 @media (max-width: 414px) {
+  .about-me {
+    width: 91%;
+    padding-top: 53px;
+  }
   .student {
-    flex-direction: column;
+    flex-direction: column-reverse;
+  }
+  .student__photo {
+    max-width: 292px;
+    margin-top: 61px;
+  }
+  .student__name {
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    margin: 38px 0 0;
+  }
+  .student__profession {
+    margin: 20px 0 20px;
+    font-feature-settings: "clig" off, "liga" off;
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .student__description {
+    font-feature-settings: "clig" off, "liga" off;
+    font-size: 11px;
+    line-height: 16px;
+    margin-bottom: 57px;
   }
 }
