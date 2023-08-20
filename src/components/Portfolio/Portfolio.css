@@ -55,7 +55,7 @@
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 500px) {
   .portfolio {
     padding: 52px 0 10px;
   }

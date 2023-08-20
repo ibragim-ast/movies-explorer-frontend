@@ -34,6 +34,7 @@
   font-weight: 400;
   line-height: 22px;
   max-width: 600px;
+  padding-right: 30px;
 }
 
 .student__photo {
@@ -49,6 +50,12 @@
   position: absolute;
   bottom: 0;
 }
+
+/* @media (max-width: 1000px) {
+  .student__description {
+    
+  }
+} */
 
 @media (max-width: 767px) {
   .about-me {
@@ -68,14 +75,14 @@
   .student__description {
     font-size: 12px;
     line-height: 18px;
-    max-width: 364px;
+    max-width: 329px;
   }
   .student__photo {
     max-width: 253px;
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 650px) {
   .about-me {
     width: 91%;
     padding-top: 53px;
@@ -103,6 +110,7 @@
     font-feature-settings: "clig" off, "liga" off;
     font-size: 11px;
     line-height: 16px;
+    padding-right: 0;
     margin-bottom: 57px;
   }
 }
