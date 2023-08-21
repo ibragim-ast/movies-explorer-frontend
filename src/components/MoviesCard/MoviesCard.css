@@ -76,3 +76,9 @@
 .movies-card__save-btn_active {
   background-image: url("../../assets/images/saveRed-icon.svg");
 }
+
+@media (max-width: 414px) {
+  .movies-card__title {
+    font-size: 12px;
+  }
+}

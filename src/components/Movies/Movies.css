@@ -8,3 +8,9 @@
     max-width: 92%;
   }
 }
+
+@media (max-width: 414px) {
+  .movies__container {
+    max-width: 93%;
+  }
+}

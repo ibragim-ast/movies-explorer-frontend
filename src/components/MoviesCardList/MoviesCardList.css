@@ -32,3 +32,14 @@
     margin-bottom: 149px;
   }
 }
+
+@media (max-width: 414px) {
+  .movies-card__list {
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 30px;
+    row-gap: 34px;
+    margin-top: 50px;
+    border-top: 1px solid;
+    grid-auto-rows: auto;
+  }
+}

@@ -54,4 +54,7 @@
   .button_type_search {
     margin-right: 17px;
   }
+  .button_type_more {
+    width: 242px;
+  }
 }
