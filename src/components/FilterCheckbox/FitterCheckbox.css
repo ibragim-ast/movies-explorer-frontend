@@ -1,5 +1,6 @@
 .filter-checkbox__container {
   margin-left: 80px;
+  padding-right: 20px;
 }
 
 .filter-checkbox__label {
@@ -55,11 +56,12 @@
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 564px) {
   .filter-checkbox__container {
     position: absolute;
-    top: 116px;
-    left: 52px;
+    top: 126px;
+    left: 50%;
+    transform: translate(-80%, -50%);
   }
   .filter-checkbox__label {
     font-size: 11px;

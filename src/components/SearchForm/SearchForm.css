@@ -48,7 +48,7 @@
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 564px) {
   .search-form__string {
     flex-wrap: wrap;
     position: relative;

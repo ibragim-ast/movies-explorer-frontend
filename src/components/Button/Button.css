@@ -50,7 +50,7 @@
   line-height: 18px;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 564px) {
   .button_type_search {
     margin-right: 17px;
   }
