@@ -1,25 +1,18 @@
 .not-found {
   margin: 0 auto;
-  padding: 60px 10px;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  grid-template-areas:
-    "info"
-    "btn";
-  gap: 10px;
-  min-height: 100vh;
-  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  transition: padding 0.5s;
+  align-items: center;
 }
 
 .not-found__info {
-  grid-area: info;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  margin-top: 12px;
+  margin-top: 245px;
 }
 
 .not-found__title {
@@ -29,7 +22,6 @@
   font-weight: 400;
   line-height: 169px;
   margin: 0;
-  transition: font-size 0.5s;
 }
 
 .not-found__subtitle {
@@ -41,8 +33,6 @@
 }
 
 .not-found__btn {
-  align-self: end;
-  grid-area: btn;
   border: none;
   padding: 0;
   background-color: transparent;
@@ -50,36 +40,34 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
+  margin-top: 185px;
 }
 
-@media screen and (max-width: 769px) {
-  .not-found {
-    padding: 222px 10px;
+@media screen and (max-width: 768px) {
+  .not-found__info {
+    margin-top: 408px;
   }
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 414px) {
   .not-found {
-    padding: 30px 10px;
+    margin-top: 305px;
   }
-
   .not-found__info {
     gap: 10px;
     margin-top: 24px;
   }
-
   .not-found__title {
     font-size: 80px;
     line-height: 97px;
   }
-
   .not-found__subtitle {
     font-size: 12px;
     line-height: 15px;
   }
-
   .not-found__btn {
     font-size: 12px;
     line-height: 15px;
+    margin-top: 284px;
   }
 }
