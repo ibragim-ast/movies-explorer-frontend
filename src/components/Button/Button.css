@@ -57,4 +57,7 @@
   .button_type_more {
     width: 242px;
   }
+  .button_type_register {
+    font-size: 12px;
+  }
 }

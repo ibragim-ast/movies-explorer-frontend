@@ -1,6 +1,9 @@
 .login {
   max-width: 396px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .login__logo {
@@ -8,15 +11,21 @@
 }
 
 .login__form {
-  margin-top: 36px;
+  margin-top: 23px;
+  width: 100%;
+}
+
+.login__form-container {
+  margin-top: 35px;
+  margin: 35px 0 220px;
 }
 
 .login__title {
   font: 500 24px / normal "Inter";
 }
 
-.login__form-container {
-  margin: 35px 0 221px;
+.login__input-container {
+  margin-bottom: 20px;
 }
 
 .login__input-title {
@@ -43,13 +52,15 @@ textarea:focus {
   font: 400 10px / normal "Inter";
 }
 
-.login__message {
+.login__cta {
+  margin-top: 2px;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: row;
 }
 
-.login__message p {
+.login__cta p {
   margin-right: 7px;
   color: #8b8b8b;
   text-align: center;
@@ -68,12 +79,44 @@ textarea:focus {
   color: #3456f3;
 }
 
-.login__input-container {
-  margin-top: 19px;
-}
-
 @media (max-width: 768px) {
   .login__logo {
     margin-top: 233px;
+  }
+}
+
+@media (max-width: 564px) {
+  .login {
+    max-width: 81%;
+    align-items: center;
+  }
+  .login__logo {
+    margin-top: 56px;
+  }
+  .login__form {
+    width: 100%;
+    margin-top: 34px;
+  }
+  .login__title {
+    text-align: center;
+  }
+  .login__form-container {
+    margin: 75px 0 310px;
+  }
+  .login__cta p {
+    text-align: center;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .login-link {
+    text-align: center;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
   }
 }
