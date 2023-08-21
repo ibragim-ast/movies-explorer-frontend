@@ -49,3 +49,9 @@
   font-weight: 500;
   line-height: 18px;
 }
+
+@media (max-width: 414px) {
+  .button_type_search {
+    margin-right: 17px;
+  }
+}

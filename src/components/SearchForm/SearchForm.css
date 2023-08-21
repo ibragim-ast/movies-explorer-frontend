@@ -47,3 +47,24 @@
     margin-left: 20px;
   }
 }
+
+@media (max-width: 414px) {
+  .search-form__string {
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: space-between;
+  }
+  .search-form__icon {
+    display: none;
+  }
+  .search-form__input {
+    color: #8b8b8b;
+    font-size: 14px;
+    line-height: 20px;
+    margin-left: 14px;
+    width: 65%;
+  }
+  .search-form__line {
+    display: none;
+  }
+}

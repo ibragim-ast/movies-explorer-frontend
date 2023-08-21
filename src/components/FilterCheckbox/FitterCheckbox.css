@@ -54,3 +54,24 @@
     margin-left: 22px;
   }
 }
+
+@media (max-width: 414px) {
+  .filter-checkbox__container {
+    position: absolute;
+    top: 116px;
+    left: 52px;
+  }
+  .filter-checkbox__label {
+    font-size: 11px;
+    line-height: 18px;
+  }
+  .filter-checkbox__switch:checked + .filter-checkbox__label::before {
+    right: 114px;
+  }
+  .filter-checkbox__label::after {
+    right: 112px;
+  }
+  .filter-checkbox__label::before {
+    right: 130px;
+  }
+}
