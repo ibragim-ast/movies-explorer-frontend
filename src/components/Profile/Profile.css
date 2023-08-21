@@ -108,3 +108,18 @@ textarea:focus {
     margin: 68px 0 199px;
   }
 }
+
+@media (max-width: 564px) {
+  .profile__container {
+    padding-top: 0;
+  }
+  .profile__title {
+    margin-top: 69px;
+  }
+  .profile__form {
+    width: 91.2%;
+  }
+  .profile__input-container {
+    margin: 52px 0 199px;
+  }
+}
