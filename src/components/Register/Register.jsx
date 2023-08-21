@@ -30,11 +30,11 @@ export default function Register() {
             <span className="register__input-error"></span>
           </div>
         </div>
-        <Button className="register__submit-btn" text="Зарегистрироваться" />
+        <Button modifier="register" text="Зарегистрироваться" />
       </form>
-      <div className="register__message">
+      <div className="register__cta">
         <p>Уже зарегистрированы?</p>
-        <Link className="login-link" to="/signin">
+        <Link className="register-link" to="/signin">
           Войти
         </Link>
       </div>

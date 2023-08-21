@@ -105,17 +105,13 @@ textarea:focus {
   }
   .login__cta p {
     text-align: center;
-    font-family: Inter;
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
   .login-link {
     text-align: center;
-    font-family: Inter;
     font-size: 12px;
-    font-style: normal;
     font-weight: 500;
     line-height: normal;
   }
