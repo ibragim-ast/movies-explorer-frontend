@@ -59,15 +59,11 @@
   flex-basis: 40px;
   border-bottom: 1px solid #424242;
   text-align: right;
-}
-
-.profile__input:focus,
-textarea:focus {
   outline: none;
 }
 
 .profile__input::placeholder {
-  text-align: left;
+  text-align: right;
 }
 
 .profile__input:last-child {
@@ -121,5 +117,19 @@ textarea:focus {
   }
   .profile__input-container {
     margin: 52px 0 199px;
+  }
+  .profile__buttons {
+    padding-top: 169px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .profile__button {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+  }
+  .profile__button_red-text {
+    margin-top: 15px;
   }
 }

@@ -16,7 +16,7 @@ export default function Profile() {
       <Header />
       <section className="profile">
         <div className="profile__container">
-          <h1 className="profile__title">Привет, Виталий!</h1>
+          <h1 className="profile__title">Привет, Ибрагим!</h1>
           <form className="profile__form">
             <fieldset className="profile__input-container">
               <label className="profile__input-label">Имя</label>
@@ -26,6 +26,7 @@ export default function Profile() {
                 label="Имя"
                 type="text"
                 onFocus={() => setIsEditing(true)}
+                placeholder="Ибрагим"
               />
               <label className="profile__input-label">E-mail</label>
               <input
@@ -34,6 +35,7 @@ export default function Profile() {
                 label="E-mail"
                 type="email"
                 onFocus={() => setIsEditing(true)}
+                placeholder="ibra@gmail.com"
               />
             </fieldset>
           </form>
@@ -41,7 +43,7 @@ export default function Profile() {
             {!isEditing ? (
               <>
                 <button
-                  className={`profile__button ${
+                  className={`profile__button button-hover ${
                     isEditing ? "profile__button_disabled" : ""
                   }`}
                   onClick={handleEditClick}
@@ -50,7 +52,7 @@ export default function Profile() {
                 </button>
                 <Link
                   to="/"
-                  className={`profile__button profile__button_red-text ${
+                  className={`profile__button profile__button_red-text button-hover ${
                     isEditing ? "profile__button_disabled" : ""
                   }`}
                 >
