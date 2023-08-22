@@ -1,25 +1,25 @@
-import logo from "../../assets/images/logo.svg";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
+import AuthPage from "../AuthPage/AuthPage";
 import CTA from "../CTA/CTA";
-import "./Register.css";
 
-export default function Register() {
+const Register = () => {
+  const registerInputs = [
+    { label: "Имя", type: "name", name: "name" },
+    { label: "E-mail", type: "email", name: "email" },
+    { label: "Пароль", type: "password", name: "password" },
+  ];
+
   return (
     <>
-      <section className="register">
-        <img className="register__logo" src={logo} alt="Логотип" />
-        <form className="register__form">
-          <h1 className="register__title">Добро пожаловать!</h1>
-          <div className="register__form-container">
-            <Input label="Имя" type="name" name="name" />
-            <Input label="E-mail" type="email" name="email" />
-            <Input label="Пароль" type="password" name="password" />
-          </div>
-          <Button modifier="register" text="Зарегистрироваться" />
-        </form>
-      </section>
+      <AuthPage
+        modifier="register"
+        title="Добро пожаловать!"
+        inputs={registerInputs}
+        buttonText="Зарегистрироваться"
+        buttonModifier="register"
+      />
       <CTA text="Уже зарегистрированы?" linkText="Войти" to="/signin" />
     </>
   );
-}
+};
+
+export default Register;

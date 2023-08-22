@@ -24,6 +24,14 @@
   margin: 58px 0 79px;
 }
 
+.button_type_register {
+  margin-top: 152px;
+}
+
+.button_type_login {
+  margin-top: 220px;
+}
+
 .button_type_more:hover:not(:disabled) {
   background-color: #3b444b;
 }
@@ -59,5 +67,10 @@
   }
   .button_type_register {
     font-size: 12px;
+    margin-top: 241px;
+  }
+  .button_type_login {
+    font-size: 12px;
+    margin-top: 309px;
   }
 }
