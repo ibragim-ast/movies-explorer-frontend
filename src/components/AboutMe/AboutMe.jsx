@@ -1,5 +1,5 @@
 import Title from "../Title/Title";
-import photo from "../../assets/images/photo.svg";
+import photo from "../../assets/images/photo.jpeg";
 import "./AboutMe.css";
 import Portfolio from "../Portfolio/Portfolio";
 
@@ -10,13 +10,13 @@ export default function AboutMe() {
       <div className="student">
         <div className="student__info">
           <h3 className="student__name">Ибрагим</h3>
-          <h4 className="student__profession">Фронтенд-разработчик, 30 лет</h4>
+          <h4 className="student__profession">Фронтенд-разработчик, 38 лет</h4>
           <p className="student__description">
             Я родился и живу в Грозном, закончил факультет истории ЧГУ. У меня
-            есть жена и 5 детей. Я люблю слушать музыку, а ещё увлекаюсь бегом.
-            Недавно начал кодить. С 2022 года занимаюсь веб-разработкой. После
-            того, как прошёл курс по веб-разработке, начал заниматься
-            фриланс-заказами и ушёл с постоянной работы.
+            есть жена и 5 детей. Люблю компьютерные игры, прогулки и покататься
+            на велосипеде. С 2022 года поставил себе цель - освоить профессию
+            программиста. С самого начала у меня есть какой-то план и я его
+            придерживаюсь
           </p>
           <a
             className="student__github link-hover"

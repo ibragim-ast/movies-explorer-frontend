@@ -1,6 +1,6 @@
 import "./Input.css";
 
-const Input = ({ label, type, name }) => {
+const Input = ({ label, type, name, inputModifier }) => {
   return (
     <div className="input__container">
       <label className="input__title">{label}</label>

@@ -20,6 +20,7 @@
 .input:focus,
 textarea:focus {
   outline: none;
+  border-bottom: 1px solid #4285f4;
 }
 
 .input__error {
