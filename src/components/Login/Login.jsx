@@ -1,6 +1,6 @@
 import logo from "../../assets/images/logo.svg";
-import { Link } from "react-router-dom";
 import Button from "../Button/Button";
+import CTA from "../CTA/CTA";
 import "./Login.css";
 
 export default function Login() {
@@ -29,12 +29,11 @@ export default function Login() {
           />
         </form>
       </section>
-      <div className="login__cta">
-        <p>Ещё не зарегистрированы?</p>
-        <Link className="login-link" to="/signup">
-          Регистрация
-        </Link>
-      </div>
+      <CTA
+        text="Ещё не зарегистрированы?"
+        to="/signup"
+        linkText="Регистрация"
+      />
     </>
   );
 }

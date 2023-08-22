@@ -52,33 +52,6 @@ textarea:focus {
   font: 400 10px / normal "Inter";
 }
 
-.login__cta {
-  margin-top: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-}
-
-.login__cta p {
-  margin-right: 7px;
-  color: #8b8b8b;
-  text-align: center;
-  font: 400 14px / normal "Inter";
-}
-
-.login-link {
-  color: #4285f4;
-  text-align: center;
-  font: 400 14px / normal "Inter";
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.login-link:hover {
-  color: #3456f3;
-}
-
 @media (max-width: 768px) {
   .login__logo {
     margin-top: 233px;
@@ -102,17 +75,5 @@ textarea:focus {
   }
   .login__form-container {
     margin: 75px 0 310px;
-  }
-  .login__cta p {
-    text-align: center;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: normal;
-  }
-  .login-link {
-    text-align: center;
-    font-size: 12px;
-    font-weight: 500;
-    line-height: normal;
   }
 }

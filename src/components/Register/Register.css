@@ -47,27 +47,6 @@ textarea:focus {
   font: 400 10px / normal "Inter";
 }
 
-.register__cta {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.register__cta p {
-  margin-right: 7px;
-  color: #8b8b8b;
-  text-align: center;
-  font: 400 14px / normal "Inter";
-}
-
-.register-link {
-  color: #4285f4;
-  text-align: center;
-  font: 400 14px / normal "Inter";
-  text-decoration: none;
-}
-
 .register__input-container {
   margin-top: 19px;
 }
@@ -84,10 +63,6 @@ textarea:focus {
   }
   .register__form-container {
     margin: 35px 0 152px;
-  }
-  .register__cta {
-    width: 100%;
-    margin-top: 2px;
   }
 }
 
@@ -107,24 +82,5 @@ textarea:focus {
   }
   .register__form-container {
     margin: 75px 0 241px;
-  }
-  .register__cta {
-    margin-top: 2px;
-  }
-  .register__cta p {
-    text-align: center;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
-  .register-link {
-    text-align: center;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
   }
 }
