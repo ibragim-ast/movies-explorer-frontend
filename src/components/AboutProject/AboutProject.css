@@ -89,7 +89,7 @@
   width: 80%;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .about-project {
     padding: 91px 0 84px;
     max-width: 87%;

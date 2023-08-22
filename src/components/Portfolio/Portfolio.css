@@ -1,5 +1,5 @@
 .portfolio {
-  padding-top: 102px;
+  padding-top: 78px;
 }
 
 .portfolio__title {
@@ -46,9 +46,9 @@
   letter-spacing: -1.2px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .portfolio {
-    padding: 70px 0 54px;
+    padding: 70px 0 0;
   }
   .portfolio__link {
     font-size: 28px;

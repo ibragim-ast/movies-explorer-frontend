@@ -51,13 +51,7 @@
   bottom: 0;
 }
 
-/* @media (max-width: 1000px) {
-  .student__description {
-    
-  }
-} */
-
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .about-me {
     width: 87%;
     padding-top: 91px;

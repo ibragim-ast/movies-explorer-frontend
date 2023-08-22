@@ -18,7 +18,12 @@ export default function AboutMe() {
             того, как прошёл курс по веб-разработке, начал заниматься
             фриланс-заказами и ушёл с постоянной работы.
           </p>
-          <a className="student__github" href="https://github.com/ibragim-ast">
+          <a
+            className="student__github link-hover"
+            href="https://github.com/ibragim-ast"
+            target="_blank"
+            rel="noreferrer"
+          >
             Github
           </a>
         </div>

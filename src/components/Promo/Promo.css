@@ -16,11 +16,11 @@
   padding: 52px 0 0 70px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .promo {
     background-position: 50% 88.5%;
     background-size: 680px 230px;
-    padding-bottom: 439px;
+    padding-bottom: 369px;
   }
   .promo__title {
     text-align: center;

@@ -4,7 +4,9 @@ import "./Button.css";
 const Button = ({ modifier, text, handler }) => {
   return (
     <button
-      className={`button ${modifier ? `button_type_${modifier}` : ""}`}
+      className={`button button-hover ${
+        modifier ? `button_type_${modifier}` : ""
+      }`}
       type="submit"
       onClick={handler}
     >

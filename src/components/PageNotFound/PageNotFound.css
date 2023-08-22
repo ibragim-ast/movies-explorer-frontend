@@ -1,9 +1,9 @@
 .not-found {
+  height: 100vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   align-items: center;
 }
 
@@ -12,7 +12,6 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
-  margin-top: 245px;
 }
 
 .not-found__title {
@@ -43,15 +42,9 @@
   margin-top: 185px;
 }
 
-@media screen and (max-width: 768px) {
-  .not-found__info {
-    margin-top: 408px;
-  }
-}
-
 @media screen and (max-width: 414px) {
   .not-found {
-    margin-top: 305px;
+    margin-top: 127px;
   }
   .not-found__info {
     gap: 10px;
@@ -68,6 +61,5 @@
   .not-found__btn {
     font-size: 12px;
     line-height: 15px;
-    margin-top: 284px;
   }
 }

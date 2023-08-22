@@ -11,7 +11,7 @@
 }
 
 .register__form {
-  margin-top: 36px;
+  margin-top: 22px;
   width: 100%;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .register__form-container {
-  margin: 35px 0 220px;
+  margin: 33px 0 156px;
 }
 
 .register__input-title {
@@ -100,8 +100,7 @@ textarea:focus {
     margin-top: 56px;
   }
   .register__form {
-    width: 100%;
-    margin-top: 35px;
+    margin-top: 50px;
   }
   .register__title {
     text-align: center;

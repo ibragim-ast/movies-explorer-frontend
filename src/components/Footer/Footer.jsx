@@ -1,5 +1,4 @@
 import "./Footer.css";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -12,22 +11,24 @@ const Footer = () => {
         <nav className="footer__navigation">
           <ul className="footer__navigation-links">
             <li>
-              <Link
+              <a
                 className="footer__navigation-link link-hover"
                 href="https://practicum.yandex.ru/"
                 target="_blank"
+                rel="noreferrer"
               >
                 Яндекс.Практикум
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 className="footer__navigation-link link-hover"
                 href="https://github.com/ibragim-ast"
                 target="_blank"
+                rel="noreferrer"
               >
                 Github
-              </Link>
+              </a>
             </li>
           </ul>
         </nav>

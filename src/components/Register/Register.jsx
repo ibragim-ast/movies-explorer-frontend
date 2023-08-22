@@ -34,7 +34,7 @@ export default function Register() {
       </form>
       <div className="register__cta">
         <p>Уже зарегистрированы?</p>
-        <Link className="register-link" to="/signin">
+        <Link className="register-link link-hover" to="/signin">
           Войти
         </Link>
       </div>

@@ -38,31 +38,31 @@ export default function Profile() {
                 placeholder="ibra@gmail.com"
               />
             </fieldset>
+            <div className="profile__buttons">
+              {!isEditing ? (
+                <>
+                  <button
+                    className={`profile__button button-hover ${
+                      isEditing ? "profile__button_disabled" : ""
+                    }`}
+                    onClick={handleEditClick}
+                  >
+                    Редактировать
+                  </button>
+                  <Link
+                    to="/"
+                    className={`profile__button profile__button_red-text button-hover ${
+                      isEditing ? "profile__button_disabled" : ""
+                    }`}
+                  >
+                    Выйти из аккаунта
+                  </Link>
+                </>
+              ) : (
+                <Button modifier="profile" text="Сохранить" />
+              )}
+            </div>
           </form>
-          <div className="profile__buttons">
-            {!isEditing ? (
-              <>
-                <button
-                  className={`profile__button button-hover ${
-                    isEditing ? "profile__button_disabled" : ""
-                  }`}
-                  onClick={handleEditClick}
-                >
-                  Редактировать
-                </button>
-                <Link
-                  to="/"
-                  className={`profile__button profile__button_red-text button-hover ${
-                    isEditing ? "profile__button_disabled" : ""
-                  }`}
-                >
-                  Выйти из аккаунта
-                </Link>
-              </>
-            ) : (
-              <Button modifier="profile" text="Сохранить" />
-            )}
-          </div>
         </div>
       </section>
     </>
