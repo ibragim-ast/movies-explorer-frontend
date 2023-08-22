@@ -23,34 +23,6 @@
   margin: 33px 0 156px;
 }
 
-.register__input-title {
-  color: #8b8b8b;
-  font: 400 10px / normal "Inter";
-}
-
-.register__input {
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  border-bottom: 1px solid #424242;
-  color: #fff;
-  font: 400 14px/2 "Inter";
-}
-
-.register__input:focus,
-textarea:focus {
-  outline: none;
-}
-
-.register__input-error {
-  color: #ee3465;
-  font: 400 10px / normal "Inter";
-}
-
-.register__input-container {
-  margin-top: 19px;
-}
-
 @media (max-width: 768px) {
   .register__logo {
     margin-top: 231px;

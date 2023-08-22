@@ -24,34 +24,6 @@
   font: 500 24px / normal "Inter";
 }
 
-.login__input-container {
-  margin-bottom: 20px;
-}
-
-.login__input-title {
-  color: #8b8b8b;
-  font: 400 10px / normal "Inter";
-}
-
-.login__input {
-  width: 100%;
-  border: none;
-  background-color: transparent;
-  border-bottom: 1px solid #424242;
-  color: #fff;
-  font: 400 14px/2 "Inter";
-}
-
-.login__input:focus,
-textarea:focus {
-  outline: none;
-}
-
-.login__input-error {
-  color: #ee3465;
-  font: 400 10px / normal "Inter";
-}
-
 @media (max-width: 768px) {
   .login__logo {
     margin-top: 233px;

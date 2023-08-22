@@ -1,0 +1,27 @@
+.input__container {
+  margin-top: 19px;
+}
+
+.input__title {
+  color: #8b8b8b;
+  font: 400 10px / normal "Inter";
+}
+
+.input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid #424242;
+  color: #fff;
+  font: 400 14px/2 "Inter";
+}
+
+.input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.input__error {
+  color: #ee3465;
+  font: 400 10px / normal "Inter";
+}
