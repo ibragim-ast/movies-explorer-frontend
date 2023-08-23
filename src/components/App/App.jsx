@@ -7,14 +7,29 @@ import Profile from "../Profile/Profile";
 import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import PageNotFound from "../PageNotFound/PageNotFound";
+import useFormValidator from "../../hooks/useFormValidation";
 import { exampleMovies, savedMovies } from "../../utils/constants";
 
 function App() {
+  const { values, errors, handleChange, isValid, setValues } =
+    useFormValidator();
+
   return (
     <div className="app">
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/profile"
+          element={
+            <Profile
+              values={values}
+              errors={errors}
+              handleChange={handleChange}
+              isValid={isValid}
+              setValues={setValues}
+            />
+          }
+        />
         <Route
           path="/movies"
           element={<Movies exampleMovies={exampleMovies} />}
@@ -23,8 +38,28 @@ function App() {
           path="/saved-movies"
           element={<SavedMovies exampleMovies={savedMovies} />}
         />
-        <Route path="/signup" element={<Register />} />
-        <Route path="/signin" element={<Login />} />
+        <Route
+          path="/signup"
+          element={
+            <Register
+              values={values}
+              errors={errors}
+              handleChange={handleChange}
+              isValid={isValid}
+            />
+          }
+        />
+        <Route
+          path="/signin"
+          element={
+            <Login
+              values={values}
+              errors={errors}
+              handleChange={handleChange}
+              isValid={isValid}
+            />
+          }
+        />
         <Route path="*" element={<PageNotFound />} />
       </Routes>
     </div>

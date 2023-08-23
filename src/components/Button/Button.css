@@ -28,8 +28,18 @@
   margin-top: 152px;
 }
 
+.button_type_register:disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+}
+
 .button_type_login {
   margin-top: 220px;
+}
+
+.button_type_login:disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
 }
 
 .button_type_more:hover:not(:disabled) {

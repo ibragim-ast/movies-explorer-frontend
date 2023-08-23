@@ -8,16 +8,16 @@ const useFormValidator = (initialValues = {}) => {
 
   const handleChange = (evt) => {
     const { value, name } = evt.target;
-    setValues({ ...values, [name] : value});
-    setErrors({ ...errors, [name]: evt.target.validationMessage,});
+    setValues({ ...values, [name] : value });
+    setErrors({ ...errors, [name]: evt.target.validationMessage });
     setIsValid(evt.target.closest('form').checkValidity());
-    };
+  };
 
   const resetForm = useCallback(() => {
-      setValues({});
-      setErrors({});
-      setIsValid(false);
-    }, []);
+    setValues({});
+    setErrors({});
+    setIsValid(false);
+  }, []);
 
   return {
     values,

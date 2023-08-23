@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import Header from "../Header/Header";
-// import Button from "../Button/Button";
 import "./Profile.css";
-import useFormValidator from "../../hooks/useFormValidation";
 import { Link } from "react-router-dom";
 
-export default function Profile() {
+export default function Profile({
+  values,
+  errors,
+  handleChange,
+  isValid,
+  setValues,
+}) {
   const [isEditing, setIsEditing] = useState(false);
-
-  const { values, errors, isValid, handleChange, setValues } =
-    useFormValidator();
 
   const handleEditClick = (evt) => {
     evt.preventDefault();

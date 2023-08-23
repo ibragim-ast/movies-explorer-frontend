@@ -3,7 +3,16 @@ import logo from "../../assets/images/logo.svg";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 
-const AuthPage = ({ title, inputs, buttonText, buttonModifier }) => {
+const AuthPage = ({
+  title,
+  inputs,
+  buttonText,
+  buttonModifier,
+  values,
+  errors,
+  handleChange,
+  isValid,
+}) => {
   return (
     <section className="auth-page">
       <img className="auth-page__logo" src={logo} alt="Логотип" />
@@ -16,13 +25,20 @@ const AuthPage = ({ title, inputs, buttonText, buttonModifier }) => {
               label={input.label}
               type={input.type}
               name={input.name}
+              value={values[input.name] || ""}
+              error={errors[input.name]}
+              handleChange={handleChange}
+              required={input.required}
+              minLength={input.minLength}
+              maxLength={input.maxLength}
+              autoComplete={input.autoComplete}
             />
           ))}
         </div>
         <Button
-          className="auth__submit-btn"
           modifier={buttonModifier}
           text={buttonText}
+          disabled={!isValid}
         />
       </form>
     </section>
