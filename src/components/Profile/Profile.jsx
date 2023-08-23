@@ -1,65 +1,93 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Header from "../Header/Header";
-import Button from "../Button/Button";
+// import Button from "../Button/Button";
 import "./Profile.css";
+import useFormValidator from "../../hooks/useFormValidation";
 import { Link } from "react-router-dom";
 
 export default function Profile() {
   const [isEditing, setIsEditing] = useState(false);
 
-  const handleEditClick = () => {
-    setIsEditing(true);
+  const { values, errors, isValid, handleChange, setValues } =
+    useFormValidator();
+
+  const handleEditClick = (evt) => {
+    evt.preventDefault();
+    setIsEditing(!isEditing);
   };
+
+  useEffect(() => {
+    setValues({ name: "Ибрагим", email: "ibragim.ast@gmail.com" });
+  }, [setValues]);
 
   return (
     <>
       <Header />
       <section className="profile">
         <div className="profile__container">
-          <h1 className="profile__title">Привет, Ибрагим!</h1>
+          <h1 className="profile__title">Привет, {values.name}!</h1>
           <form className="profile__form">
             <fieldset className="profile__input-container">
-              <label className="profile__input-label">Имя</label>
+              <label className="profile__label">Имя</label>
               <input
-                className="profile__input"
+                className={`profile__input ${
+                  isEditing ? "profile__input_active" : ""
+                } ${errors.name ? "profile__input_active-error" : ""}`}
+                type="name"
+                placeholder="Имя"
                 name="name"
-                label="Имя"
-                type="text"
-                onFocus={() => setIsEditing(true)}
-                placeholder="Ибрагим"
+                minLength="2"
+                maxLength="30"
+                required
+                onChange={handleChange}
+                value={values.name}
+                autoComplete="off"
+                disabled={!isEditing && "true"}
               />
-              <label className="profile__input-label">E-mail</label>
+              <span className="profile__error">{errors.name}</span>
+              <label className="profile__label">E-mail</label>
               <input
-                className="profile__input"
-                name="email"
-                label="E-mail"
+                className={`profile__input ${
+                  isEditing ? "profile__input_active" : ""
+                } ${errors.email ? "profile__input_active-error" : ""}`}
                 type="email"
-                onFocus={() => setIsEditing(true)}
-                placeholder="ibra@gmail.com"
+                placeholder="E-mail"
+                name="email"
+                required
+                onChange={handleChange}
+                value={values.email}
+                autoComplete="off"
+                disabled={!isEditing && "true"}
               />
+              <span className="profile__error">{errors.email}</span>
             </fieldset>
             <div className="profile__buttons">
-              {!isEditing ? (
+              {isEditing && (
+                <button
+                  className="profile__submit-btn button-hover"
+                  type="submit"
+                  disabled={!isValid}
+                >
+                  {isEditing ? "Сохранить" : "Редактировать"}
+                </button>
+              )}
+              {!isEditing && (
                 <>
                   <button
-                    className={`profile__button button-hover ${
-                      isEditing ? "profile__button_disabled" : ""
-                    }`}
+                    className="profile__edit-btn button-hover"
+                    type="button"
                     onClick={handleEditClick}
                   >
-                    Редактировать
+                    {isEditing ? "Сохранить" : "Редактировать"}{" "}
                   </button>
                   <Link
+                    className="profile__logout button-hover"
+                    type="button"
                     to="/"
-                    className={`profile__button profile__button_red-text button-hover ${
-                      isEditing ? "profile__button_disabled" : ""
-                    }`}
                   >
                     Выйти из аккаунта
                   </Link>
                 </>
-              ) : (
-                <Button modifier="profile" text="Сохранить" />
               )}
             </div>
           </form>

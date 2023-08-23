@@ -1,37 +1,23 @@
 import { useState, useCallback } from 'react';
 
-function useFormValidator(formClass) {
+const useFormValidator = (initialValues = {}) => {
 
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});
-  const [isValid, setIsValid] = useState({});
+  const [isValid, setIsValid] = useState(false);
 
   const handleChange = (evt) => {
-    const target = evt.target;
-    const name = target.name;
-    const value = target.value;
+    const { value, name } = evt.target;
+    setValues({ ...values, [name] : value});
+    setErrors({ ...errors, [name]: evt.target.validationMessage,});
+    setIsValid(evt.target.closest('form').checkValidity());
+    };
 
-    setValues({
-      ...values,
-      [name]: value
-    });
-
-    setErrors({
-      ...errors,
-      [name]: target.validationMessage
-    });
-
-    setIsValid(target.closest(`.${formClass}`).checkValidity());
-  }
-
-  const resetForm = useCallback(
-    (newValues = {}, newErrors = {}, newIsValid = false) => {
-      setValues(newValues);
-      setErrors(newErrors);
-      setIsValid(newIsValid)
-    },
-    [setValues, setErrors, setIsValid]
-  );
+  const resetForm = useCallback(() => {
+      setValues({});
+      setErrors({});
+      setIsValid(false);
+    }, []);
 
   return {
     values,
@@ -39,6 +25,7 @@ function useFormValidator(formClass) {
     isValid,
     handleChange,
     resetForm,
+    setValues,
   };
 };
 
