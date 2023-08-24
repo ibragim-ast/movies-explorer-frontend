@@ -78,6 +78,10 @@
   text-align: center;
 }
 
+.profile__input_active:focus {
+  border: 1px solid #3456f3;
+}
+
 .profile__input_active-error {
   border: 1px solid rgba(344, 78, 93, 0.4);
 }
