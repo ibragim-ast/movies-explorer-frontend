@@ -1,7 +1,7 @@
 .about-me {
   width: 89%;
   margin: 0 auto;
-  padding-top: 110px;
+  padding-top: 107px;
 }
 
 .student {
@@ -39,8 +39,8 @@
 
 .student__photo {
   margin-top: 65px;
-  max-width: 270px;
   object-fit: contain;
+  border-radius: 6px;
 }
 
 .student__github {
