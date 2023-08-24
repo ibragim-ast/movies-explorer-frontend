@@ -21,6 +21,7 @@
   background-color: #313131;
   padding: 10px;
   border-radius: 50%;
+  overflow: clip;
 }
 
 @media (max-width: 768px) {

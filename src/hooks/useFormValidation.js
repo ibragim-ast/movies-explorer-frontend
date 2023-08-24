@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 
-const useFormValidator = (initialValues = {}) => {
+const useFormValidator = (initialValues = { name: '', email: '' }) => {
 
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState({});

@@ -39,6 +39,8 @@
 
 .student__photo {
   margin-top: 65px;
+  max-width: 270px;
+  object-fit: contain;
 }
 
 .student__github {

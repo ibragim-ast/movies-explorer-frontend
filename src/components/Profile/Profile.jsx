@@ -3,13 +3,7 @@ import Header from "../Header/Header";
 import "./Profile.css";
 import { Link } from "react-router-dom";
 
-export default function Profile({
-  values,
-  errors,
-  handleChange,
-  isValid,
-  setValues,
-}) {
+const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEditClick = (evt) => {
@@ -43,7 +37,7 @@ export default function Profile({
                 onChange={handleChange}
                 value={values.name}
                 autoComplete="off"
-                disabled={!isEditing && "true"}
+                disabled={!isEditing}
               />
               <span className="profile__error">{errors.name}</span>
               <label className="profile__label">E-mail</label>
@@ -58,7 +52,7 @@ export default function Profile({
                 onChange={handleChange}
                 value={values.email}
                 autoComplete="off"
-                disabled={!isEditing && "true"}
+                disabled={!isEditing}
               />
               <span className="profile__error">{errors.email}</span>
             </fieldset>
@@ -81,11 +75,7 @@ export default function Profile({
                   >
                     {isEditing ? "Сохранить" : "Редактировать"}{" "}
                   </button>
-                  <Link
-                    className="profile__logout button-hover"
-                    type="button"
-                    to="/"
-                  >
+                  <Link className="profile__logout button-hover" to="/">
                     Выйти из аккаунта
                   </Link>
                 </>
@@ -96,4 +86,6 @@ export default function Profile({
       </section>
     </>
   );
-}
+};
+
+export default Profile;
