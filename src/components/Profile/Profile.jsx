@@ -18,7 +18,7 @@ const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
   return (
     <>
       <Header />
-      <section className="profile">
+      <main className="profile">
         <div className="profile__container">
           <h1 className="profile__title">Привет, {values.name}!</h1>
           <form className="profile__form">
@@ -83,7 +83,7 @@ const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
             </div>
           </form>
         </div>
-      </section>
+      </main>
     </>
   );
 };

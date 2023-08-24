@@ -31,7 +31,7 @@ const Register = ({ values, errors, handleChange, isValid }) => {
   ];
 
   return (
-    <>
+    <main>
       <AuthPage
         modifier="register"
         title="Добро пожаловать!"
@@ -44,7 +44,7 @@ const Register = ({ values, errors, handleChange, isValid }) => {
         isValid={isValid}
       />
       <CTA text="Уже зарегистрированы?" linkText="Войти" to="/signin" />
-    </>
+    </main>
   );
 };
 

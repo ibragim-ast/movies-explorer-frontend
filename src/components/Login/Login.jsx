@@ -22,7 +22,7 @@ const Login = ({ values, errors, handleChange, isValid }) => {
   ];
 
   return (
-    <>
+    <main>
       <AuthPage
         title="Рады видеть!"
         inputs={loginInputs}
@@ -38,7 +38,7 @@ const Login = ({ values, errors, handleChange, isValid }) => {
         linkText="Регистрация"
         to="/signup"
       />
-    </>
+    </main>
   );
 };
 

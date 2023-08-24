@@ -7,13 +7,13 @@ import "./Movies.css";
 
 export default function Movies({ exampleMovies }) {
   return (
-    <section className="movies">
+    <main className="movies">
       <Header />
       <div className="movies__container">
         <SearchForm />
         <MoviesCardList exampleMovies={exampleMovies} />
       </div>
       <Footer />
-    </section>
+    </main>
   );
 }
