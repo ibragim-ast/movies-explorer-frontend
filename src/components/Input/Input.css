@@ -17,7 +17,7 @@
   padding-bottom: 2px;
 }
 
-.input:focus,
+.input__input:focus,
 textarea:focus {
   outline: none;
   border-bottom: 1px solid #4285f4;

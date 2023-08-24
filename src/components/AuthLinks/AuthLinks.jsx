@@ -5,7 +5,7 @@ export default function AuthLinks() {
   return (
     <nav className="auth-links">
       <Link
-        className="auth-links__link auth-links__link_type_register"
+        className="auth-links__link auth-links__link_type_register link-hover"
         to="/signup"
       >
         Регистрация
