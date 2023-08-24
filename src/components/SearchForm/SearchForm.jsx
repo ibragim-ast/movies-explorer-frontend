@@ -13,6 +13,7 @@ const SearchForm = () => {
             className="search-form__input"
             type="text"
             placeholder="Фильм"
+            required
           />
           <Button modifier="search" text="Найти" />
           <span className="search-form__line"></span>
