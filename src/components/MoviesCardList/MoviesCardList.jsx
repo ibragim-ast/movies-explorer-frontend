@@ -42,7 +42,7 @@ const MoviesCardList = ({ exampleMovies }) => {
   }
 
   return (
-    <section className="movies-cards">
+    <div className="movies-cards">
       <div
         className={`movies-cards__list ${
           isMoviesSavedPage ? "movies-cards__list_type_saved" : ""
@@ -61,7 +61,7 @@ const MoviesCardList = ({ exampleMovies }) => {
       {!isMoviesSavedPage && (
         <Button modifier="more" text="Еще" handler={showMoreItems} />
       )}
-    </section>
+    </div>
   );
 };
 

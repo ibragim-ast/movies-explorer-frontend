@@ -5,7 +5,7 @@ const Register = ({ values, errors, handleChange, isValid }) => {
   const registerInputs = [
     {
       label: "Имя",
-      type: "name",
+      type: "text",
       name: "name",
       required: true,
       minLength: 8,

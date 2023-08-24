@@ -28,7 +28,7 @@ const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
                 className={`profile__input ${
                   isEditing ? "profile__input_active" : ""
                 } ${errors.name ? "profile__input_active-error" : ""}`}
-                type="name"
+                type="text"
                 placeholder="Имя"
                 name="name"
                 minLength="2"
