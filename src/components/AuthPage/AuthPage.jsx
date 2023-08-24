@@ -2,6 +2,7 @@ import "./AuthPage.css";
 import logo from "../../assets/images/logo.svg";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
+import { Link } from "react-router-dom";
 
 const AuthPage = ({
   title,
@@ -15,7 +16,9 @@ const AuthPage = ({
 }) => {
   return (
     <section className="auth-page">
-      <img className="auth-page__logo" src={logo} alt="Логотип" />
+      <Link to="/" className="auth-page__logo-link button-hover">
+        <img className="auth-page__logo" src={logo} alt="Логотип" />
+      </Link>
       <form className="auth-page__form">
         <h1 className="auth-page__title">{title}</h1>
         <div className="auth-page__form-container">

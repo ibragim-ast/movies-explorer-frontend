@@ -61,6 +61,9 @@
 }
 
 @media (max-width: 414px) {
+  .footer {
+    padding-top: 0;
+  }
   .footer__title {
     font-feature-settings: "clig" off, "liga" off;
     font-size: 12px;

@@ -3,10 +3,16 @@
   line-height: 17px;
   font-weight: 400;
   background-color: #303030;
-  padding: 21px 0 22px;
+  padding: 21px 0 19px;
   display: flex;
   align-items: center;
   justify-content: center;
   letter-spacing: -0.4px;
   border-radius: 10px;
+}
+
+@media (max-width: 414px) {
+  .techs__list-item {
+    padding-top: 23px;
+  }
 }
