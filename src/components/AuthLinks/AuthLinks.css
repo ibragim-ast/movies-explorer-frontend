@@ -5,7 +5,7 @@
   gap: 14px;
 }
 
-.auth__link {
+.auth-links__link {
   text-decoration: none;
   color: #fff;
   text-align: right;
@@ -19,7 +19,7 @@
   cursor: pointer;
 }
 
-.auth__link_type_login {
+.auth-links__link_type_login {
   background-color: #3ddc84;
   border-radius: 3px;
   color: #000;
@@ -30,11 +30,11 @@
   .auth-links {
     gap: 0;
   }
-  .auth__link_type_login {
+  .auth-links__link_type_login {
     padding: 5px 13px;
     font-size: 10px;
   }
-  .auth__link_type_register {
+  .auth-links__link_type_register {
     font-size: 10px;
   }
 }

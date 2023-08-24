@@ -14,7 +14,7 @@ export default function Portfolio() {
           >
             Сайт закусочной
           </a>
-          <span className="project__arrow">↗</span>
+          <span className="portfolio__arrow">↗</span>
         </li>
         <li className="portfolio__project">
           <a
@@ -25,7 +25,7 @@ export default function Portfolio() {
           >
             Сайт о путешествиях по России
           </a>
-          <span className="project__arrow">↗</span>
+          <span className="portfolio__arrow">↗</span>
         </li>
         <li className="portfolio__project">
           <a
@@ -36,7 +36,7 @@ export default function Portfolio() {
           >
             Приложение "Место"
           </a>
-          <span className="project__arrow">↗</span>
+          <span className="portfolio__arrow">↗</span>
         </li>
       </ul>
     </section>

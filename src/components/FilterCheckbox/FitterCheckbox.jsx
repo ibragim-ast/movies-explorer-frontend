@@ -2,7 +2,7 @@ import "./FitterCheckbox.css";
 
 const FitterCheckbox = () => {
   return (
-    <div className="filter-checkbox__container">
+    <div className="filter-checkbox">
       <input className="filter-checkbox__switch" type="checkbox" id="switch" />
       <label className="filter-checkbox__label button-hover" htmlFor="switch">
         Короткометражки

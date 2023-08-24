@@ -38,7 +38,7 @@
   text-decoration: none;
 }
 
-.project__arrow {
+.portfolio__arrow {
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
@@ -75,7 +75,7 @@
   .portfolio__projects-list {
     margin-top: 41px;
   }
-  .project__arrow {
+  .portfolio__arrow {
     font-size: 18px;
     line-height: 28px;
     letter-spacing: -0.72px;

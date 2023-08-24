@@ -13,10 +13,10 @@ const Input = ({
   autoComplete,
 }) => {
   return (
-    <div className="input__container">
+    <div className="input">
       <label className="input__title">{label}</label>
       <input
-        className="input"
+        className="input__input"
         type={type}
         name={name}
         value={value}

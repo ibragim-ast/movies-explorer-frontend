@@ -1,4 +1,4 @@
-.input__container {
+.input {
   margin-top: 18px;
 }
 
@@ -7,7 +7,7 @@
   font: 400 10px / normal "Inter";
 }
 
-.input {
+.input__input {
   width: 100%;
   border: none;
   background-color: transparent;
