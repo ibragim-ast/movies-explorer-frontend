@@ -10,12 +10,13 @@ import {
 import "./MoviesCardList.css";
 
 const MoviesCardList = ({ exampleMovies }) => {
-  const [visibleItems, setVisibleItems] = useState(12);
+  const [visibleItems, setVisibleItems] = useState();
   const location = useLocation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const isMoviesSavedPage = location.pathname === "/saved-movies";
   const showMoreItems = () => {
     setVisibleItems((prev) => prev + 4);
+    console.log("more films");
   };
 
   useEffect(() => {
@@ -59,7 +60,12 @@ const MoviesCardList = ({ exampleMovies }) => {
         ))}
       </div>
       {!isMoviesSavedPage && (
-        <Button modifier="more" text="Еще" handler={showMoreItems} />
+        <Button
+          modifier="more"
+          text="Еще"
+          handler={showMoreItems}
+          type="button"
+        />
       )}
     </div>
   );

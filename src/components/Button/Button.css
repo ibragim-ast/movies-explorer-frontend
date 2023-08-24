@@ -51,7 +51,7 @@
 }
 
 .button_type_more:disabled {
-  cursor: default;
+  cursor: not-allowed;
 }
 
 .button_type_search {
