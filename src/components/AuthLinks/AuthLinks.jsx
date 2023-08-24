@@ -3,7 +3,7 @@ import "./AuthLinks.css";
 
 export default function AuthLinks() {
   return (
-    <div className="auth-links">
+    <nav className="auth-links">
       <Link
         className="auth-links__link auth-links__link_type_register"
         to="/signup"
@@ -16,6 +16,6 @@ export default function AuthLinks() {
       >
         Войти
       </Link>
-    </div>
+    </nav>
   );
 }
