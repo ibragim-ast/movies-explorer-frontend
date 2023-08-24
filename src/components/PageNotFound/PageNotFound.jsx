@@ -12,6 +12,7 @@ const PageNotFound = () => {
       </div>
       <button
         className="not-found__btn button-hover"
+        type="button"
         onClick={() => navigate(-1)}
       >
         Назад

@@ -11,7 +11,11 @@ const AccountButton = () => {
   };
 
   return (
-    <button className={`account-button__btn`} onClick={redirectToProfile}>
+    <button
+      className={`account-button__btn`}
+      type="button"
+      onClick={redirectToProfile}
+    >
       <p className="account-button__text">Аккаунт</p>
       <img src={accountIcon} alt="иконка" className={"account-button__img"} />
     </button>

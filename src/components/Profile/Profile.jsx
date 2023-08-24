@@ -75,7 +75,7 @@ const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
                   >
                     {isEditing ? "Сохранить" : "Редактировать"}{" "}
                   </button>
-                  <Link className="profile__logout button-hover" to="/">
+                  <Link className="profile__logout link-hover" to="/">
                     Выйти из аккаунта
                   </Link>
                 </>

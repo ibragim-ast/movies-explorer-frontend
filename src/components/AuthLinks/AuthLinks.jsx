@@ -11,7 +11,7 @@ export default function AuthLinks() {
         Регистрация
       </Link>
       <Link
-        className="auth-links__link auth-links__link_type_login button-hover"
+        className="auth-links__link auth-links__link_type_login link-hover"
         to="/signin"
       >
         Войти

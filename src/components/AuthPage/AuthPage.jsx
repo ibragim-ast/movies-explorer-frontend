@@ -16,7 +16,7 @@ const AuthPage = ({
 }) => {
   return (
     <section className="auth-page">
-      <Link to="/" className="auth-page__logo-link button-hover">
+      <Link to="/" className="auth-page__logo-link link-hover">
         <img className="auth-page__logo" src={logo} alt="Логотип" />
       </Link>
       <form className="auth-page__form">
