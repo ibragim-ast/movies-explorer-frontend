@@ -35,6 +35,7 @@
   line-height: 22px;
   max-width: 600px;
   padding-right: 30px;
+  padding-bottom: 84px;
 }
 
 .student__photo {
@@ -49,7 +50,6 @@
   font-weight: 500;
   line-height: normal;
   text-decoration: none;
-  position: absolute;
   bottom: 0;
 }
 

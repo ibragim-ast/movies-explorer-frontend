@@ -21,9 +21,9 @@ const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
       <main className="profile">
         <div className="profile__container">
           <h1 className="profile__title">Привет, {values.name}!</h1>
-          <form className="profile__form">
-            <fieldset className="profile__input-container">
-              <label className="profile__label">Имя</label>
+          <form className="profile__form" name="profile">
+            <label className="profile__field">
+              <span className="profile__label">Имя</span>
               <input
                 className={`profile__input ${
                   isEditing ? "profile__input_active" : ""
@@ -40,7 +40,9 @@ const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
                 disabled={!isEditing}
               />
               <span className="profile__error">{errors.name}</span>
-              <label className="profile__label">E-mail</label>
+            </label>
+            <label className="profile__field">
+              <span className="profile__label">E-mail</span>
               <input
                 className={`profile__input ${
                   isEditing ? "profile__input_active" : ""
@@ -55,32 +57,30 @@ const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
                 disabled={!isEditing}
               />
               <span className="profile__error">{errors.email}</span>
-            </fieldset>
-            <div className="profile__buttons">
-              {isEditing && (
+            </label>
+            {isEditing && (
+              <button
+                className="profile__submit-btn button-hover"
+                type="submit"
+                disabled={!isValid}
+              >
+                {isEditing ? "Сохранить" : "Редактировать"}
+              </button>
+            )}
+            {!isEditing && (
+              <>
                 <button
-                  className="profile__submit-btn button-hover"
-                  type="submit"
-                  disabled={!isValid}
+                  className="profile__edit-btn button-hover"
+                  type="button"
+                  onClick={handleEditClick}
                 >
-                  {isEditing ? "Сохранить" : "Редактировать"}
+                  {isEditing ? "Сохранить" : "Редактировать"}{" "}
                 </button>
-              )}
-              {!isEditing && (
-                <>
-                  <button
-                    className="profile__edit-btn button-hover"
-                    type="button"
-                    onClick={handleEditClick}
-                  >
-                    {isEditing ? "Сохранить" : "Редактировать"}{" "}
-                  </button>
-                  <Link className="profile__logout link-hover" to="/">
-                    Выйти из аккаунта
-                  </Link>
-                </>
-              )}
-            </div>
+                <Link className="profile__logout link-hover" to="/">
+                  Выйти из аккаунта
+                </Link>
+              </>
+            )}
           </form>
         </div>
       </main>
