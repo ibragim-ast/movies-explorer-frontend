@@ -4,6 +4,7 @@ const Input = ({
   label,
   type,
   name,
+  placeholder,
   value,
   error,
   handleChange,
@@ -19,6 +20,7 @@ const Input = ({
         className="input__input"
         type={type}
         name={name}
+        placeholder={placeholder}
         value={value}
         onChange={handleChange}
         minLength={minLength}

@@ -5,6 +5,7 @@ const Login = ({ values, errors, handleChange, isValid }) => {
   const loginInputs = [
     {
       label: "E-mail",
+      placeholder: "E-mail",
       type: "email",
       name: "email",
       required: true,
@@ -14,6 +15,7 @@ const Login = ({ values, errors, handleChange, isValid }) => {
       label: "Пароль",
       type: "password",
       name: "password",
+      placeholder: "Пароль",
       required: true,
       minLength: 8,
       maxLength: 30,

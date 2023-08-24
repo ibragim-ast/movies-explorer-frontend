@@ -28,6 +28,7 @@ const AuthPage = ({
               label={input.label}
               type={input.type}
               name={input.name}
+              placeholder={input.placeholder}
               value={values[input.name] || ""}
               error={errors[input.name]}
               handleChange={handleChange}
