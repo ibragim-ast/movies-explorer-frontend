@@ -1,0 +1,86 @@
+.button {
+  width: 100%;
+  height: 45px;
+  border-radius: 3px;
+  background: #3456f3;
+  color: #fff;
+  text-align: center;
+  font: 500 14px / normal "Inter";
+  border: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button_type_more {
+  width: 320px;
+  height: 36px;
+  border-radius: 6px;
+  background-color: #2f2f2f;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 58px 0 79px;
+}
+
+.button_type_register {
+  margin-top: 152px;
+}
+
+.button_type_register:disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+}
+
+.button_type_login {
+  margin-top: 220px;
+}
+
+.button_type_login:disabled {
+  background-color: #f8f8f8;
+  color: #c2c2c2;
+}
+
+.button_type_more:hover:not(:disabled) {
+  background-color: #3b444b;
+}
+
+.movies-card__more-btn:hover:not(:disabled) {
+  background-color: #3b444b;
+}
+
+.button_type_more:disabled {
+  cursor: not-allowed;
+}
+
+.button_type_search {
+  width: 58.65px;
+  height: 34px;
+  border-radius: 48px;
+  background: #4285f4;
+  border: none;
+  color: #fff;
+  text-align: center;
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 18px;
+}
+
+@media (max-width: 564px) {
+  .button_type_search {
+    margin-right: 17px;
+  }
+  .button_type_more {
+    width: 242px;
+  }
+  .button_type_register {
+    font-size: 12px;
+    margin-top: 241px;
+  }
+  .button_type_login {
+    font-size: 12px;
+    margin-top: 309px;
+  }
+}

@@ -1,0 +1,113 @@
+.about-me {
+  width: 89%;
+  margin: 0 auto;
+  padding-top: 113px;
+}
+
+.student {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.student__name {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 58px;
+  letter-spacing: -2px;
+  margin: 66px 0 0;
+}
+
+.student__profession {
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin-top: 19px;
+}
+
+.student__description {
+  font-feature-settings: "clig" off, "liga" off;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  max-width: 600px;
+  padding-right: 30px;
+  padding-bottom: 84px;
+}
+
+.student__photo {
+  margin-top: 65px;
+  object-fit: contain;
+  border-radius: 6px;
+}
+
+.student__github {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration: none;
+  bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .about-me {
+    width: 87%;
+    padding-top: 92px;
+  }
+  .student__name {
+    font-size: 40px;
+    line-height: 40px;
+    letter-spacing: -1.6px;
+  }
+  .student__profession {
+    font-size: 12px;
+    line-height: 18px;
+    margin: 16px 0 20px;
+  }
+  .student__description {
+    font-size: 12px;
+    line-height: 18px;
+    max-width: 329px;
+  }
+  .student__photo {
+    max-width: 253px;
+  }
+}
+
+@media (max-width: 650px) {
+  .about-me {
+    width: 91%;
+    padding-top: 53px;
+  }
+  .student {
+    flex-direction: column-reverse;
+  }
+  .student__photo {
+    max-width: 292px;
+    margin-top: 61px;
+  }
+  .student__name {
+    font-size: 30px;
+    line-height: normal;
+    letter-spacing: -1.2px;
+    margin: 41px 0 0;
+  }
+  .student__profession {
+    margin: 20px 0 20px;
+    font-feature-settings: "clig" off, "liga" off;
+    font-size: 11px;
+    line-height: 16px;
+  }
+  .student__description {
+    font-feature-settings: "clig" off, "liga" off;
+    font-size: 11px;
+    line-height: 16px;
+    padding-right: 0;
+    margin-bottom: 40px;
+    padding-bottom: 0;
+  }
+}

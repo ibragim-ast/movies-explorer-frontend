@@ -1,0 +1,41 @@
+.cta {
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.cta p {
+  margin-right: 7px;
+  color: #8b8b8b;
+  text-align: center;
+  font: 400 14px / normal "Inter";
+}
+
+.cta__link {
+  color: #4285f4;
+  text-align: center;
+  font: 400 14px / normal "Inter";
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cta__link:hover {
+  color: #3456f3;
+}
+
+@media (max-width: 564px) {
+  .cta p {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .cta__link {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+  }
+}
