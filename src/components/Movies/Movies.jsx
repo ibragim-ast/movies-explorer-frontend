@@ -5,7 +5,7 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList.jsx";
 import Footer from "../Footer/Footer";
 import "./Movies.css";
 
-export default function Movies({ exampleMovies }) {
+const Movies = ({ exampleMovies }) => {
   return (
     <main className="movies">
       <Header />
@@ -16,4 +16,6 @@ export default function Movies({ exampleMovies }) {
       <Footer />
     </main>
   );
-}
+};
+
+export default Movies;

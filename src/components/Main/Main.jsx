@@ -10,12 +10,12 @@ const Main = () => {
   return (
     <>
       <Header />
-      <div className="main">
+      <main className="main">
         <Promo />
         <AboutProject />
         <Techs />
         <AboutMe />
-      </div>
+      </main>
       <Footer />
     </>
   );
