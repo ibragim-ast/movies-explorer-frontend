@@ -1,9 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Header from "../Header/Header";
 import "./Profile.css";
-import { Link } from "react-router-dom";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
+const Profile = ({
+  values,
+  errors,
+  handleChange,
+  isValid,
+  setValues,
+  onLogout,
+}) => {
+  const { name, email } = useContext(CurrentUserContext);
+
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEditClick = (evt) => {
@@ -12,8 +21,8 @@ const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
   };
 
   useEffect(() => {
-    setValues({ name: "Ибрагим", email: "ibragim.ast@gmail.com" });
-  }, [setValues]);
+    setValues({ name, email });
+  }, [name, email]);
 
   return (
     <>
@@ -76,9 +85,13 @@ const Profile = ({ values, errors, handleChange, isValid, setValues }) => {
                 >
                   {isEditing ? "Сохранить" : "Редактировать"}{" "}
                 </button>
-                <Link className="profile__logout link-hover" to="/">
+                <button
+                  className="profile__logout button-hover"
+                  type="button"
+                  onClick={onLogout}
+                >
                   Выйти из аккаунта
-                </Link>
+                </button>
               </>
             )}
           </form>

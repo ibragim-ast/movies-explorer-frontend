@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import Main from "../Main/Main";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
@@ -13,6 +13,7 @@ import { useCallback, useState, useEffect } from "react";
 import Preloader from "../Preloader/Preloader";
 import mainApi from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
+import { ERROR } from "../../utils/constants";
 
 function App() {
   const { values, errors, handleChange, isValid, setValues, resetForm } =
@@ -23,6 +24,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState({});
 
   const navigate = useNavigate();
+  const { pathname } = useLocation;
 
   const tokenCheck = useCallback(() => {
     const jwt = localStorage.getItem("jwt");
@@ -39,25 +41,30 @@ function App() {
         })
         .catch((err) => console.log(err));
     } else {
-      setIsLoading(true);
+      setIsLoading(false);
     }
   }, [isLoggedIn, navigate]);
 
   useEffect(() => {
     tokenCheck();
     if (isLoggedIn) {
+      const currentPath = pathname;
+      setIsLoading(true);
       mainApi
         .getUserInfo()
-        .then((userData) => {
-          setCurrentUser(userData);
-          setIsLoading(false);
+        .then((user) => {
+          setCurrentUser(user);
+          setIsLoggedIn(true);
+          navigate(currentPath, { replace: true });
         })
-        .catch((err) => {
-          console.log(err);
+        .catch((error) => {
+          console.log(`${ERROR}: ${error}`);
+        })
+        .finally(() => {
           setIsLoading(false);
         });
     }
-  }, [isLoggedIn, tokenCheck]);
+  }, [isLoggedIn, navigate, pathname, tokenCheck]);
 
   const handleRegistration = (data) => {
     mainApi
@@ -85,6 +92,12 @@ function App() {
       });
   };
 
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    navigate("/", { replace: true });
+    localStorage.clear();
+  };
+
   return (
     <CurrentUserContext.Provider value={currentUser}>
       {isLoading ? (
@@ -102,6 +115,7 @@ function App() {
                   handleChange={handleChange}
                   isValid={isValid}
                   setValues={setValues}
+                  onLogout={handleLogout}
                 />
               }
             />
