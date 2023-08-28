@@ -49,14 +49,8 @@ const MoviesCardList = ({ movies }) => {
           isMoviesSavedPage ? "movies-cards__list_type_saved" : ""
         }`}
       >
-        {movies.slice(0, visibleItems).map((card) => (
-          <MoviesCard
-            key={card.movieId}
-            movieId={card.movieId}
-            duration={card.duration}
-            image={card.image}
-            name={card.nameRU}
-          />
+        {movies.slice(0, visibleItems).map((movie) => (
+          <MoviesCard key={movie.id} movie={movie} />
         ))}
       </div>
       {!isMoviesSavedPage && (

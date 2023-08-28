@@ -19,6 +19,15 @@
   margin-bottom: 239px;
 }
 
+.movies-card__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 364/203;
+}
+
 @media (max-width: 768px) {
   .movies-cards {
     margin-top: 109px;
