@@ -13,13 +13,25 @@ const AuthPage = ({
   errors,
   handleChange,
   isValid,
+  resetForm,
+  onSubmit,
 }) => {
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    onSubmit(values);
+    resetForm();
+  };
+
   return (
     <section className="auth-page">
       <Link to="/" className="auth-page__logo-link link-hover">
         <img className="auth-page__logo" src={logo} alt="Логотип" />
       </Link>
-      <form className="auth-page__form">
+      <form
+        className="auth-page__form"
+        name="signInForm"
+        onSubmit={handleSubmit}
+      >
         <h1 className="auth-page__title">{title}</h1>
         <div className="auth-page__form-container">
           {inputs.map((input, index) => (

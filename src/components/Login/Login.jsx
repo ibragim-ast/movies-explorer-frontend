@@ -1,7 +1,14 @@
 import CTA from "../CTA/CTA";
 import AuthPage from "../AuthPage/AuthPage";
 
-const Login = ({ values, errors, handleChange, isValid }) => {
+const Login = ({
+  values,
+  errors,
+  handleChange,
+  isValid,
+  onSubmit,
+  resetForm,
+}) => {
   const loginInputs = [
     {
       label: "E-mail",
@@ -23,6 +30,10 @@ const Login = ({ values, errors, handleChange, isValid }) => {
     },
   ];
 
+  const handleLogin = (values) => {
+    onSubmit(values);
+  };
+
   return (
     <main>
       <AuthPage
@@ -34,6 +45,8 @@ const Login = ({ values, errors, handleChange, isValid }) => {
         errors={errors}
         handleChange={handleChange}
         isValid={isValid}
+        onSubmit={handleLogin}
+        resetForm={resetForm}
       />
       <CTA
         text="Еще не зарегистрированы?"

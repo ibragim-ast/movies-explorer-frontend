@@ -1,7 +1,14 @@
 import AuthPage from "../AuthPage/AuthPage";
 import CTA from "../CTA/CTA";
 
-const Register = ({ values, errors, handleChange, isValid }) => {
+const Register = ({
+  values,
+  errors,
+  handleChange,
+  isValid,
+  onSubmit,
+  resetForm,
+}) => {
   const registerInputs = [
     {
       label: "Имя",
@@ -9,7 +16,7 @@ const Register = ({ values, errors, handleChange, isValid }) => {
       name: "name",
       placeholder: "Имя",
       required: true,
-      minLength: 8,
+      minLength: 2,
       maxLength: 30,
       autoComplete: "off",
     },
@@ -44,7 +51,9 @@ const Register = ({ values, errors, handleChange, isValid }) => {
         values={values}
         errors={errors}
         handleChange={handleChange}
+        resetForm={resetForm}
         isValid={isValid}
+        onSubmit={onSubmit}
       />
       <CTA text="Уже зарегистрированы?" linkText="Войти" to="/signin" />
     </main>
