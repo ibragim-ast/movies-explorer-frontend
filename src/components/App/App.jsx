@@ -8,9 +8,11 @@ import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import useFormValidator from "../../hooks/useFormValidation";
-import { CurrentUserContext } from "../CurrentUserContext/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import { useCallback, useState, useEffect } from "react";
+import Preloader from "../Preloader/Preloader";
 import mainApi from "../../utils/MainApi";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
   const { values, errors, handleChange, isValid, setValues, resetForm } =
@@ -84,52 +86,73 @@ function App() {
   };
 
   return (
-    <div className="app">
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route
-          path="/profile"
-          element={
-            <Profile
-              values={values}
-              errors={errors}
-              handleChange={handleChange}
-              isValid={isValid}
-              setValues={setValues}
+    <CurrentUserContext.Provider value={currentUser}>
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <div className="app">
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route
+              path="/profile"
+              element={
+                <Profile
+                  values={values}
+                  errors={errors}
+                  handleChange={handleChange}
+                  isValid={isValid}
+                  setValues={setValues}
+                />
+              }
             />
-          }
-        />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/saved-movies" element={<SavedMovies />} />
-        <Route
-          path="/signup"
-          element={
-            <Register
-              values={values}
-              errors={errors}
-              handleChange={handleChange}
-              isValid={isValid}
-              onSubmit={handleRegistration}
-              resetForm={resetForm}
+
+            <Route
+              path="/movies"
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <Movies isLoggedIn={isLoggedIn} />
+                </ProtectedRoute>
+              }
             />
-          }
-        />
-        <Route
-          path="/signin"
-          element={
-            <Login
-              values={values}
-              errors={errors}
-              handleChange={handleChange}
-              isValid={isValid}
-              onSubmit={handleLogin}
-              resetForm={resetForm}
+            <Route
+              path="/saved-movies"
+              element={
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <SavedMovies isLoggedIn={isLoggedIn} />
+                </ProtectedRoute>
+              }
             />
-          }
-        />
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </div>
+            <Route
+              path="/signup"
+              element={
+                <Register
+                  values={values}
+                  errors={errors}
+                  handleChange={handleChange}
+                  isValid={isValid}
+                  onSubmit={handleRegistration}
+                  resetForm={resetForm}
+                />
+              }
+            />
+            <Route
+              path="/signin"
+              element={
+                <Login
+                  values={values}
+                  errors={errors}
+                  handleChange={handleChange}
+                  isValid={isValid}
+                  onSubmit={handleLogin}
+                  resetForm={resetForm}
+                />
+              }
+            />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </div>
+      )}
+    </CurrentUserContext.Provider>
   );
 }
 
