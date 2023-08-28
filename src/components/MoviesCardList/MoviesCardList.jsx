@@ -9,7 +9,7 @@ import {
 } from "../../utils/constants";
 import "./MoviesCardList.css";
 
-const MoviesCardList = ({ exampleMovies }) => {
+const MoviesCardList = ({ movies }) => {
   const [visibleItems, setVisibleItems] = useState();
   const location = useLocation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -49,7 +49,7 @@ const MoviesCardList = ({ exampleMovies }) => {
           isMoviesSavedPage ? "movies-cards__list_type_saved" : ""
         }`}
       >
-        {exampleMovies.slice(0, visibleItems).map((card) => (
+        {movies.slice(0, visibleItems).map((card) => (
           <MoviesCard
             key={card.movieId}
             movieId={card.movieId}

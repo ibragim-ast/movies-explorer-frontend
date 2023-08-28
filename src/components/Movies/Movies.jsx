@@ -5,13 +5,13 @@ import MoviesCardList from "../MoviesCardList/MoviesCardList.jsx";
 import Footer from "../Footer/Footer";
 import "./Movies.css";
 
-const Movies = ({ exampleMovies }) => {
+const Movies = ({ movies }) => {
   return (
     <main className="movies">
       <Header />
       <div className="movies__container">
         <SearchForm />
-        <MoviesCardList exampleMovies={exampleMovies} />
+        <MoviesCardList movies={movies} />
       </div>
       <Footer />
     </main>

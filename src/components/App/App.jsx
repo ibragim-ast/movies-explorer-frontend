@@ -8,7 +8,6 @@ import Movies from "../Movies/Movies";
 import SavedMovies from "../SavedMovies/SavedMovies";
 import PageNotFound from "../PageNotFound/PageNotFound";
 import useFormValidator from "../../hooks/useFormValidation";
-import { exampleMovies, savedMovies } from "../../utils/constants";
 
 function App() {
   const { values, errors, handleChange, isValid, setValues } =
@@ -30,14 +29,8 @@ function App() {
             />
           }
         />
-        <Route
-          path="/movies"
-          element={<Movies exampleMovies={exampleMovies} />}
-        />
-        <Route
-          path="/saved-movies"
-          element={<SavedMovies exampleMovies={savedMovies} />}
-        />
+        <Route path="/movies" element={<Movies />} />
+        <Route path="/saved-movies" element={<SavedMovies />} />
         <Route
           path="/signup"
           element={
