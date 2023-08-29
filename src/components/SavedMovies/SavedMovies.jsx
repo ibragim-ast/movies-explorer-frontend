@@ -6,7 +6,7 @@ import "./SavedMovies.css";
 
 const SavedMovies = ({ movies }) => {
   return (
-    <main className="movies">
+    <main className="saved-movies">
       <Header />
       <div className="movies__container">
         <SearchForm />

@@ -2,6 +2,7 @@ import { useState, useEffect, useContext } from "react";
 import Header from "../Header/Header";
 import "./Profile.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import { NAME_REGEX, EMAIL_REGEX } from "../../utils/constants";
 
 const Profile = ({
   values,
@@ -22,7 +23,7 @@ const Profile = ({
 
   useEffect(() => {
     setValues({ name, email });
-  }, [name, email]);
+  }, [name, email, setValues]);
 
   return (
     <>
@@ -47,6 +48,7 @@ const Profile = ({
                 value={values.name}
                 autoComplete="off"
                 disabled={!isEditing}
+                pattern={NAME_REGEX}
               />
               <span className="profile__error">{errors.name}</span>
             </label>
@@ -64,6 +66,7 @@ const Profile = ({
                 value={values.email}
                 autoComplete="off"
                 disabled={!isEditing}
+                pattern={EMAIL_REGEX}
               />
               <span className="profile__error">{errors.email}</span>
             </label>

@@ -14,12 +14,16 @@ import Preloader from "../Preloader/Preloader";
 import mainApi from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import {
+  MAX_SHORT_MOVIE_DURATION,
   ERROR,
   ERROR_400,
+  ERROR_401,
   ERROR_409,
   EMAIL_ALREADY_REGISTERED_MESSAGE,
   INCORRECT_ADD_USER_DATA,
   REG_ERROR_MESSAGE,
+  AUTH_ERROR_MESSAGE,
+  INVALID_AUTH_DATA_ERROR_MESSAGE,
 } from "../../utils/constants";
 
 function App() {
@@ -29,8 +33,9 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState({});
-  //const [authErrorMessage, setAuthErrorMessage] = useState("");
+  const [authErrorMessage, setAuthErrorMessage] = useState("");
   const [regErrorMessage, setRegErrorMessage] = useState("");
+  const [savedMovies, setSavedMovies] = useState([]);
 
   const navigate = useNavigate();
   const { pathname } = useLocation;
@@ -111,7 +116,11 @@ function App() {
         }
       })
       .catch((err) => {
-        console.log(err);
+        if (err === ERROR_401) {
+          setAuthErrorMessage(INVALID_AUTH_DATA_ERROR_MESSAGE);
+        } else {
+          setAuthErrorMessage(AUTH_ERROR_MESSAGE);
+        }
       });
   };
 
@@ -120,6 +129,41 @@ function App() {
     navigate("/", { replace: true });
     localStorage.clear();
   };
+
+  const handleSaveMovie = (movie) => {
+    mainApi
+      .saveMovie(movie)
+      .then((savedMovie) => {
+        setSavedMovies([...savedMovies, savedMovie]);
+      })
+      .catch((error) => {
+        console.log(`${ERROR}: ${error}`);
+      });
+  };
+
+  const handleDeleteMovie = (movieId) => {
+    mainApi
+      .deleteSavedMovie(movieId)
+      .then(({ _id: deleteMovieId }) => {
+        const updatedSavedMovies = savedMovies.filter(
+          ({ _id }) => _id !== deleteMovieId
+        );
+        setSavedMovies(updatedSavedMovies);
+      })
+      .catch((error) => {
+        console.log(`${ERROR}: ${error}`);
+      });
+  };
+
+  const filterShortMovies = (movie) =>
+    movie.filter(({ duration }) => duration <= MAX_SHORT_MOVIE_DURATION);
+
+  const filterMoviesByName = (movies, request) =>
+    movies.filter(
+      ({ nameRU, nameEN }) =>
+        nameRU.toLowerCase().includes(request.toLowerCase()) ||
+        nameEN.toLowerCase().includes(request.toLowerCase())
+    );
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -144,12 +188,23 @@ function App() {
                 </ProtectedRoute>
               }
             />
-
             <Route
               path="/movies"
               element={
                 <ProtectedRoute isLoggedIn={isLoggedIn}>
-                  <Movies isLoggedIn={isLoggedIn} />
+                  <Movies
+                    isLoggedIn={isLoggedIn}
+                    values={values}
+                    errors={errors}
+                    isValid={isValid}
+                    setValues={setValues}
+                    handleChange={handleChange}
+                    savedMovies={savedMovies}
+                    onSaveMovies={handleSaveMovie}
+                    onDeleteMovie={handleDeleteMovie}
+                    filterShortMovies={filterShortMovies}
+                    filterMoviesByName={filterMoviesByName}
+                  />
                 </ProtectedRoute>
               }
             />
@@ -185,6 +240,7 @@ function App() {
                   isValid={isValid}
                   onSubmit={handleLogin}
                   resetForm={resetForm}
+                  requestErrorMessage={authErrorMessage}
                 />
               }
             />

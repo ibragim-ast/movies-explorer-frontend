@@ -35,6 +35,19 @@
   border-bottom: 1px solid rgba(61, 220, 132, 0.4);
 }
 
+.search-form__input_type_error:focus {
+  border-color: #ee3465;
+}
+
+.search-form__error {
+  color: #ee3465;
+  font-size: 12px;
+  line-height: 15px;
+  align-self: start;
+  min-height: 15px;
+  margin: 10px auto 16px 20px;
+}
+
 .search-form__line {
   border-left: 1px solid #424242;
   height: 40px;
@@ -71,5 +84,8 @@
   }
   .search-form__line {
     display: none;
+  }
+  .search-form__error {
+    margin-bottom: 15px;
   }
 }

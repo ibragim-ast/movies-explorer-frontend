@@ -1,6 +1,6 @@
 import CTA from "../CTA/CTA";
 import AuthPage from "../AuthPage/AuthPage";
-import { NAME_REGEX, EMAIL_REGEX } from "../../utils/constants";
+import { EMAIL_REGEX } from "../../utils/constants";
 
 const Login = ({
   values,
@@ -9,6 +9,7 @@ const Login = ({
   isValid,
   onSubmit,
   resetForm,
+  requestErrorMessage,
 }) => {
   const loginInputs = [
     {
@@ -49,6 +50,7 @@ const Login = ({
         isValid={isValid}
         onSubmit={handleLogin}
         resetForm={resetForm}
+        requestErrorMessage={requestErrorMessage}
       />
       <CTA
         text="Еще не зарегистрированы?"

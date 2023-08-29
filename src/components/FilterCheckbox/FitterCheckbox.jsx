@@ -1,9 +1,16 @@
 import "./FitterCheckbox.css";
 
-const FitterCheckbox = () => {
+const FitterCheckbox = ({ onChange, value }) => {
   return (
     <div className="filter-checkbox">
-      <input className="filter-checkbox__switch" type="checkbox" id="switch" />
+      <input
+        className="filter-checkbox__switch"
+        type="checkbox"
+        name="checkbox"
+        id="switch"
+        onChange={onChange}
+        checked={value}
+      />
       <label className="filter-checkbox__label link-hover" htmlFor="switch">
         Короткометражки
       </label>
