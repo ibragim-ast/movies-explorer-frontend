@@ -8,6 +8,7 @@ const Register = ({
   isValid,
   onSubmit,
   resetForm,
+  requestErrorMessage,
 }) => {
   const registerInputs = [
     {
@@ -54,6 +55,7 @@ const Register = ({
         resetForm={resetForm}
         isValid={isValid}
         onSubmit={onSubmit}
+        requestErrorMessage={requestErrorMessage}
       />
       <CTA text="Уже зарегистрированы?" linkText="Войти" to="/signin" />
     </main>

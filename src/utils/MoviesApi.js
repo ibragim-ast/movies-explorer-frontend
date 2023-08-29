@@ -1,5 +1,4 @@
 import { moviesApiSettings } from "./apiSettings";
-import { ERROR } from "./constants";
 
 class MoviesApi {
   constructor({ baseUrl, headers }) {
@@ -9,7 +8,7 @@ class MoviesApi {
 
   _handleResponse(res) {
     if (!res.ok) {
-      return Promise.reject(`${ERROR}: ${res.status}`);
+      return Promise.reject(res.status);
     }
     return res.json();
   }

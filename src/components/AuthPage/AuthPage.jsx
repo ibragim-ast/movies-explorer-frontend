@@ -15,6 +15,7 @@ const AuthPage = ({
   isValid,
   resetForm,
   onSubmit,
+  requestErrorMessage,
 }) => {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -51,6 +52,7 @@ const AuthPage = ({
             />
           ))}
         </div>
+        <p className="auth-page__request-error">{requestErrorMessage}</p>
         <Button
           modifier={buttonModifier}
           text={buttonText}

@@ -13,7 +13,14 @@ import { useCallback, useState, useEffect } from "react";
 import Preloader from "../Preloader/Preloader";
 import mainApi from "../../utils/MainApi";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
-import { ERROR } from "../../utils/constants";
+import {
+  ERROR,
+  ERROR_400,
+  ERROR_409,
+  EMAIL_ALREADY_REGISTERED_MESSAGE,
+  INCORRECT_ADD_USER_DATA,
+  REG_ERROR_MESSAGE,
+} from "../../utils/constants";
 
 function App() {
   const { values, errors, handleChange, isValid, setValues, resetForm } =
@@ -22,6 +29,8 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState({});
+  //const [authErrorMessage, setAuthErrorMessage] = useState("");
+  const [regErrorMessage, setRegErrorMessage] = useState("");
 
   const navigate = useNavigate();
   const { pathname } = useLocation;
@@ -39,7 +48,7 @@ function App() {
             navigate("/movies", { replace: true });
           }
         })
-        .catch((err) => console.log(err));
+        .catch((err) => console.log("token check error:", err));
     } else {
       setIsLoading(false);
     }
@@ -66,14 +75,24 @@ function App() {
     }
   }, [isLoggedIn, navigate, pathname, tokenCheck]);
 
-  const handleRegistration = (data) => {
+  const handleRegistration = ({ name, email, password }) => {
     mainApi
-      .register(data)
+      .register({ name, email, password })
       .then(() => {
-        navigate("/signin", { replace: true });
+        setIsLoggedIn(true);
+        navigate("/movies", { replace: true });
+        setRegErrorMessage("");
+        setCurrentUser({ name, email });
       })
       .catch((err) => {
-        console.log(err);
+        console.log("register-error:", err);
+        if (err === ERROR_409) {
+          setRegErrorMessage(EMAIL_ALREADY_REGISTERED_MESSAGE);
+        } else if (err === ERROR_400) {
+          setRegErrorMessage(INCORRECT_ADD_USER_DATA);
+        } else {
+          setRegErrorMessage(REG_ERROR_MESSAGE);
+        }
       });
   };
 
@@ -109,14 +128,16 @@ function App() {
             <Route
               path="/profile"
               element={
-                <Profile
-                  values={values}
-                  errors={errors}
-                  handleChange={handleChange}
-                  isValid={isValid}
-                  setValues={setValues}
-                  onLogout={handleLogout}
-                />
+                <ProtectedRoute isLoggedIn={isLoggedIn}>
+                  <Profile
+                    values={values}
+                    errors={errors}
+                    handleChange={handleChange}
+                    isValid={isValid}
+                    setValues={setValues}
+                    onLogout={handleLogout}
+                  />
+                </ProtectedRoute>
               }
             />
 
@@ -146,6 +167,7 @@ function App() {
                   isValid={isValid}
                   onSubmit={handleRegistration}
                   resetForm={resetForm}
+                  requestErrorMessage={regErrorMessage}
                 />
               }
             />

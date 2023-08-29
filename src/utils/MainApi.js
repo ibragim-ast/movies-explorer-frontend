@@ -1,5 +1,4 @@
 import { mainApiSettings } from "./apiSettings";
-import { ERROR } from "./constants";
 
 class MainApi {
   constructor({ baseUrl, headers }) {
@@ -9,7 +8,7 @@ class MainApi {
 
   _handleResponse(res) {
     if (!res.ok) {
-      return Promise.reject(`${ERROR}: ${res.status}`);
+      return Promise.reject(res.status);
     }
     return res.json();
   }
@@ -62,18 +61,6 @@ class MainApi {
         name: name,
         email: email,
       }),
-    }).then(this._handleResponse);
-  }
-
-  logout() {
-    const token = localStorage.getItem("jwt");
-
-    return fetch(`${this._baseUrl}/logout`, {
-      method: "POST",
-      headers: {
-        authorization: `Bearer ${token}`,
-        ...this._headers,
-      },
     }).then(this._handleResponse);
   }
 
