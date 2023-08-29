@@ -43,12 +43,16 @@ function App() {
         .checkToken(jwt)
         .then((res) => {
           if (res) {
-            setIsLoading(false);
             setIsLoggedIn(true);
             navigate("/movies", { replace: true });
           }
         })
-        .catch((err) => console.log("token check error:", err));
+        .catch((err) => {
+          console.log("token check error:", err);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
     } else {
       setIsLoading(false);
     }
@@ -81,8 +85,8 @@ function App() {
       .then(() => {
         setIsLoggedIn(true);
         navigate("/movies", { replace: true });
-        setRegErrorMessage("");
         setCurrentUser({ name, email });
+        setRegErrorMessage("");
       })
       .catch((err) => {
         console.log("register-error:", err);

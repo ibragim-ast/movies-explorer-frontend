@@ -49,6 +49,7 @@ const AuthPage = ({
               minLength={input.minLength}
               maxLength={input.maxLength}
               autoComplete={input.autoComplete}
+              pattern={input.pattern}
             />
           ))}
         </div>

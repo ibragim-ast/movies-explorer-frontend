@@ -14,11 +14,16 @@ const MOVIES_PER_PAGE_LARGE = 16;
 const MOVIES_PER_PAGE_MIDDLE = 8;
 const MOVIES_PER_PAGE_SMALL = 5;
 
+const EMAIL_REGEX = "^[a-zA-Z0-9+_.\\-]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]{2,4}$";
+const NAME_REGEX = "[A-Za-zА-Яа-яЁё\\s\\-]+";
+
 export {
   ERROR,
   ERROR_400,
   ERROR_401,
   ERROR_409,
+  EMAIL_REGEX,
+  NAME_REGEX,
   EMAIL_ALREADY_REGISTERED_MESSAGE,
   INCORRECT_ADD_USER_DATA,
   REG_ERROR_MESSAGE,

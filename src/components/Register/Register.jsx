@@ -1,5 +1,6 @@
 import AuthPage from "../AuthPage/AuthPage";
 import CTA from "../CTA/CTA";
+import { NAME_REGEX, EMAIL_REGEX } from "../../utils/constants";
 
 const Register = ({
   values,
@@ -20,6 +21,7 @@ const Register = ({
       minLength: 2,
       maxLength: 30,
       autoComplete: "off",
+      pattern: NAME_REGEX,
     },
     {
       label: "E-mail",
@@ -28,6 +30,7 @@ const Register = ({
       placeholder: "E-mail",
       required: true,
       autoComplete: "off",
+      pattern: EMAIL_REGEX,
     },
     {
       label: "Пароль",
