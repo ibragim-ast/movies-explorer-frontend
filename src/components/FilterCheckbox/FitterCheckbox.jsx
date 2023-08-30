@@ -1,21 +1,18 @@
 import "./FitterCheckbox.css";
 
-const FitterCheckbox = ({ onChange, value }) => {
-  return (
-    <div className="filter-checkbox">
-      <input
-        className="filter-checkbox__switch"
-        type="checkbox"
-        name="checkbox"
-        id="switch"
-        onChange={onChange}
-        checked={value}
-      />
-      <label className="filter-checkbox__label link-hover" htmlFor="switch">
-        Короткометражки
-      </label>
-    </div>
-  );
-};
+const FilterCheckbox = ({ onChange, value }) => (
+  <label className="filter-checkbox button-hover" htmlFor="checkbox">
+    <input
+      className="filter-checkbox__checkbox"
+      type="checkbox"
+      name="checkbox"
+      id="checkbox"
+      onChange={onChange}
+      checked={value}
+    />
+    <span className="filter-checkbox__slider" />
+    Короткометражки
+  </label>
+);
 
-export default FitterCheckbox;
+export default FilterCheckbox;
