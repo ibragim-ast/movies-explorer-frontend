@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import MoviesCard from "../MoviesCard/MoviesCard";
 import Button from "../Button/Button";
@@ -13,7 +13,9 @@ const MoviesCardList = ({ movies }) => {
   const [visibleItems, setVisibleItems] = useState();
   const location = useLocation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const [resizeTimer, setResizeTimer] = useState(null);
   const isMoviesSavedPage = location.pathname === "/saved-movies";
+  const isMoreButtonVisible = visibleItems < movies.length;
 
   const showMoreItems = () => {
     if (windowWidth >= 1280) {
@@ -25,14 +27,22 @@ const MoviesCardList = ({ movies }) => {
     }
   };
 
-  function handleResize() {
-    setWindowWidth(window.innerWidth);
-  }
+  const handleResize = useCallback(() => {
+    clearTimeout(resizeTimer);
+
+    const timer = setTimeout(() => {
+      setWindowWidth(window.innerWidth);
+    }, 300);
+
+    setResizeTimer(timer);
+  }, [resizeTimer]);
 
   useEffect(() => {
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
 
   useEffect(() => {
     const checkWindowWidth = () => {
@@ -59,7 +69,7 @@ const MoviesCardList = ({ movies }) => {
           <MoviesCard key={movie.id} movie={movie} />
         ))}
       </div>
-      {!isMoviesSavedPage && (
+      {!isMoviesSavedPage && isMoreButtonVisible && (
         <Button
           modifier="more"
           text="Еще"
