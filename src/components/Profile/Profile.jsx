@@ -11,6 +11,7 @@ const Profile = ({
   isValid,
   setValues,
   onLogout,
+  isLoggedIn,
 }) => {
   const { name, email } = useContext(CurrentUserContext);
 
@@ -27,7 +28,7 @@ const Profile = ({
 
   return (
     <>
-      <Header />
+      <Header isLoggedIn={isLoggedIn} />
       <main className="profile">
         <section className="profile__container">
           <h1 className="profile__title">Привет, {values.name}!</h1>

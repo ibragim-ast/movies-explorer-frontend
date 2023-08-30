@@ -172,12 +172,13 @@ function App() {
       ) : (
         <div className="app">
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Main isLoggedIn={isLoggedIn} />} />
             <Route
               path="/profile"
               element={
                 <ProtectedRoute isLoggedIn={isLoggedIn}>
                   <Profile
+                    isLoggedIn={isLoggedIn}
                     values={values}
                     errors={errors}
                     handleChange={handleChange}

@@ -4,7 +4,7 @@ import logo from "../../assets/images/logo.svg";
 import Navigation from "../Navigation/Navigation";
 import AuthLinks from "../AuthLinks/AuthLinks";
 
-const Header = () => {
+const Header = ({ isLoggedIn }) => {
   const location = useLocation();
   const isLanding = location.pathname === "/";
 
@@ -14,7 +14,7 @@ const Header = () => {
         <Link to="/" className="header__link button-hover">
           <img className="header__logo" src={logo} alt="логотип" />
         </Link>
-        {isLanding ? <AuthLinks /> : <Navigation />}
+        {isLoggedIn ? <Navigation /> : <AuthLinks />}
       </div>
     </header>
   );
