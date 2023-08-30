@@ -1,7 +1,9 @@
 import { useLocation } from "react-router-dom";
 import "./MoviesCard.css";
 
-const MoviesCard = ({ movieId, duration, image, name }) => {
+const MoviesCard = ({ movie }) => {
+  const { duration, trailerLink, image, nameRU } = movie;
+  const movieImage = `https://api.nomoreparties.co/${image.url}`;
   const location = useLocation();
 
   const isMoviesSavedPage = location.pathname === "/saved-movies";
@@ -20,9 +22,17 @@ const MoviesCard = ({ movieId, duration, image, name }) => {
 
   return (
     <article className="movies-card">
-      <img className="movies-card__img" src={image} alt={name} />
+      <a
+        href={trailerLink}
+        className="movies-card__link"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <img className="movies-card__img" src={movieImage} alt={nameRU} />
+      </a>
+
       <div className="movies-card__desc">
-        <h2 className="movies-card__title">{name}</h2>
+        <h2 className="movies-card__title">{nameRU}</h2>
         {isMoviesSavedPage ? (
           <button
             className="movies-card__delete-btn button-hover"

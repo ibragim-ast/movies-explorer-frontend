@@ -9,81 +9,57 @@ import {
 } from "../../utils/constants";
 import "./MoviesCardList.css";
 
-const MoviesCardList = ({ movies, messageText, onClick, savedMovies }) => {
-  const [currentMovies, setCurrentMovies] = useState([]);
-  const [initialCount, setInitialCount] = useState(Number);
-  const [step, setStep] = useState(Number);
-  const [currentPage, setCurrentPage] = useState(0);
-  const { pathname } = useLocation();
-  const isSavedMovies = pathname === "/saved-movies";
-
-  const checkWindowWidth = () => {
-    const currentWidth = window.innerWidth;
-    if (currentWidth >= 1280) {
-      setInitialCount(MOVIES_PER_PAGE_LARGE.initial);
-      setStep(MOVIES_PER_PAGE_LARGE.step);
-    } else if (currentWidth >= 768) {
-      setInitialCount(MOVIES_PER_PAGE_MIDDLE.initial);
-      setStep(MOVIES_PER_PAGE_MIDDLE.step);
-    } else {
-      setInitialCount(MOVIES_PER_PAGE_SMALL.initial);
-      setStep(MOVIES_PER_PAGE_SMALL.step);
-    }
-  };
+const MoviesCardList = ({ movies }) => {
+  const [visibleItems, setVisibleItems] = useState();
+  const location = useLocation();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const isMoviesSavedPage = location.pathname === "/saved-movies";
 
   const showMoreItems = () => {
-    setCurrentPage(currentPage + 1);
+    if (windowWidth >= 1280) {
+      setVisibleItems((prev) => prev + 4);
+    } else if (windowWidth >= 768) {
+      setVisibleItems((prev) => prev + 4);
+    } else {
+      setVisibleItems((prev) => prev + 2);
+    }
   };
 
+  function handleResize() {
+    setWindowWidth(window.innerWidth);
+  }
+
   useEffect(() => {
-    if (isSavedMovies) {
-      setCurrentMovies(movies);
-      return;
-    }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    const checkWindowWidth = () => {
+      if (windowWidth >= 1280) {
+        setVisibleItems(MOVIES_PER_PAGE_LARGE);
+      } else if (windowWidth >= 768) {
+        setVisibleItems(MOVIES_PER_PAGE_MIDDLE);
+      } else {
+        setVisibleItems(MOVIES_PER_PAGE_SMALL);
+      }
+    };
+
     checkWindowWidth();
-    setCurrentMovies(movies.slice(0, initialCount + currentPage * step));
-
-    window.addEventListener("resize", () => {
-      checkWindowWidth();
-    });
-  }, [initialCount, currentPage, movies, isSavedMovies, step]);
-
-  useEffect(() => {
-    setCurrentPage(0);
-  }, [movies]);
-
-  const handleIsSaved = (movie) => {
-    if (!isSavedMovies) {
-      const savedMovie = savedMovies.find((film) => film.movieId === movie.id);
-      return !!savedMovie;
-    }
-    return true;
-  };
+  }, [windowWidth]);
 
   return (
-    <section
-      className={`movies-card-list ${
-        isSavedMovies ? "movies-card-list_type_saved-movies" : ""
-      }`}
-    >
-      {movies.length !== 0 ? (
-        <div className="movies-card-list__container">
-          {currentMovies.map((movie) => (
-            <MoviesCard
-              movie={movie}
-              key={isSavedMovies ? movie._id : movie.id}
-              isSavedMovies={isSavedMovies}
-              onClick={onClick}
-              isSaved={handleIsSaved(movie)}
-            />
-          ))}
-        </div>
-      ) : (
-        <p className="movies-card-list__title">
-          {messageText || "Нужно ввести ключевое слово"}
-        </p>
-      )}
-      {movies.length > initialCount + currentPage * step && !isSavedMovies && (
+    <div className="movies-cards">
+      <div
+        className={`movies-cards__list ${
+          isMoviesSavedPage ? "movies-cards__list_type_saved" : ""
+        }`}
+      >
+        {movies.slice(0, visibleItems).map((movie) => (
+          <MoviesCard key={movie.id} movie={movie} />
+        ))}
+      </div>
+      {!isMoviesSavedPage && (
         <Button
           modifier="more"
           text="Еще"
@@ -91,7 +67,7 @@ const MoviesCardList = ({ movies, messageText, onClick, savedMovies }) => {
           type="button"
         />
       )}
-    </section>
+    </div>
   );
 };
 
