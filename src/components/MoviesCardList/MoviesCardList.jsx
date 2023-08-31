@@ -1,7 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import MoviesCard from "../MoviesCard/MoviesCard";
-import Preloader from "../Preloader/Preloader";
 import Button from "../Button/Button";
 import {
   MOVIES_PER_PAGE_LARGE,
@@ -10,7 +9,7 @@ import {
 } from "../../utils/constants";
 import "./MoviesCardList.css";
 
-const MoviesCardList = ({ movies, messageText, isLoading }) => {
+const MoviesCardList = ({ movies, messageText, savedMovies, onClick }) => {
   const [visibleItems, setVisibleItems] = useState();
   const location = useLocation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -26,6 +25,14 @@ const MoviesCardList = ({ movies, messageText, isLoading }) => {
     } else {
       setVisibleItems((prev) => prev + 2);
     }
+  };
+
+  const handleIsSaved = (movie) => {
+    if (!isMoviesSavedPage) {
+      const savedMovie = savedMovies.find((film) => film.movieId === movie.id);
+      return !!savedMovie;
+    }
+    return true;
   };
 
   const handleResize = useCallback(() => {
@@ -61,37 +68,37 @@ const MoviesCardList = ({ movies, messageText, isLoading }) => {
 
   return (
     <section className="movies-cards-list">
-      {isLoading ? (
-        <Preloader />
-      ) : (
-        <>
-          {movies.length !== 0 ? (
-            <div
-              className={`movies-cards-list__container ${
-                isMoviesSavedPage
-                  ? "movies-cards-list__container_type_saved"
-                  : ""
-              }`}
-            >
-              {movies.slice(0, visibleItems).map((movie) => (
-                <MoviesCard key={movie.id} movie={movie} />
-              ))}
-            </div>
-          ) : (
-            <p className="movies-card-list__title">
-              {messageText || "Нужно ввести ключевое слово"}
-            </p>
-          )}
-          {!isMoviesSavedPage && isMoreButtonVisible && (
-            <Button
-              modifier="more"
-              text="Еще"
-              handler={showMoreItems}
-              type="button"
-            />
-          )}
-        </>
-      )}
+      <>
+        {movies.length !== 0 ? (
+          <div
+            className={`movies-cards-list__container ${
+              isMoviesSavedPage ? "movies-cards-list__container_type_saved" : ""
+            }`}
+          >
+            {movies.slice(0, visibleItems).map((movie) => (
+              <MoviesCard
+                movie={movie}
+                key={isMoviesSavedPage ? movie._id : movie.id}
+                onClick={onClick}
+                isSaved={handleIsSaved(movie)}
+                isMoviesSavedPage={isMoviesSavedPage}
+              />
+            ))}
+          </div>
+        ) : (
+          <p className="movies-card-list__title">
+            {messageText || "Нужно ввести ключевое слово"}
+          </p>
+        )}
+        {!isMoviesSavedPage && isMoreButtonVisible && (
+          <Button
+            modifier="more"
+            text="Еще"
+            handler={showMoreItems}
+            type="button"
+          />
+        )}
+      </>
     </section>
   );
 };

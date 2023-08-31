@@ -24,6 +24,7 @@ import {
   REG_ERROR_MESSAGE,
   AUTH_ERROR_MESSAGE,
   INVALID_AUTH_DATA_ERROR_MESSAGE,
+  REQUIRED_AUTH_ERROR_MESSAGE,
 } from "../../utils/constants";
 
 function App() {
@@ -143,7 +144,7 @@ function App() {
 
   const handleDeleteMovie = (movieId) => {
     mainApi
-      .deleteSavedMovie(movieId)
+      .deleteMovie(movieId)
       .then(({ _id: deleteMovieId }) => {
         const updatedSavedMovies = savedMovies.filter(
           ({ _id }) => _id !== deleteMovieId
@@ -164,6 +165,28 @@ function App() {
         nameRU.toLowerCase().includes(request.toLowerCase()) ||
         nameEN.toLowerCase().includes(request.toLowerCase())
     );
+
+  useEffect(() => {
+    if (isLoggedIn) {
+      setIsLoading(true);
+      mainApi
+        .getSavedMovies()
+        .then((savedUserMovies) => {
+          setSavedMovies(savedUserMovies);
+          setIsLoggedIn(true);
+        })
+        .catch((error) => {
+          if (error === ERROR_401) {
+            console.log(`${ERROR}: ${error} ${REQUIRED_AUTH_ERROR_MESSAGE}`);
+            return;
+          }
+          console.log(`${ERROR}: ${error}`);
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  }, [isLoggedIn]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>

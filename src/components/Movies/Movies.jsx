@@ -107,9 +107,9 @@ const Movies = ({
   }, [filterShortMovies, isShortMovie]);
 
   return (
-    <main className="movies">
+    <>
       <Header isLoggedIn={isLoggedIn} />
-      <div className="movies__container">
+      <main className="movies">
         <SearchForm
           isLoading={isLoading}
           values={values}
@@ -131,9 +131,9 @@ const Movies = ({
             savedMovies={savedMovies}
           />
         )}
-      </div>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 };
 

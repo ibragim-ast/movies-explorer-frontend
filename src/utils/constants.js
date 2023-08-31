@@ -16,6 +16,7 @@ const INVALID_AUTH_DATA_ERROR_MESSAGE =
 const NO_RESULTS_MESSAGE = "Ничего не найдено";
 const REQUEST_ERROR_MESSAGE =
   "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз";
+const REQUIRED_AUTH_ERROR_MESSAGE = "Необходима авторизация";
 
 const MOVIES_PER_PAGE_LARGE = 16;
 const MOVIES_PER_PAGE_MIDDLE = 8;
@@ -38,6 +39,7 @@ export {
   REG_ERROR_MESSAGE,
   AUTH_ERROR_MESSAGE,
   INVALID_AUTH_DATA_ERROR_MESSAGE,
+  REQUIRED_AUTH_ERROR_MESSAGE,
   REQUEST_ERROR_MESSAGE,
   NO_RESULTS_MESSAGE,
   MOVIES_PER_PAGE_LARGE,
