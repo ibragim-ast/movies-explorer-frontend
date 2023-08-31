@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import MoviesCard from "../MoviesCard/MoviesCard";
+import Preloader from "../Preloader/Preloader";
 import Button from "../Button/Button";
 import {
   MOVIES_PER_PAGE_LARGE,
@@ -9,7 +10,7 @@ import {
 } from "../../utils/constants";
 import "./MoviesCardList.css";
 
-const MoviesCardList = ({ movies, messageText }) => {
+const MoviesCardList = ({ movies, messageText, isLoading }) => {
   const [visibleItems, setVisibleItems] = useState();
   const location = useLocation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -59,31 +60,39 @@ const MoviesCardList = ({ movies, messageText }) => {
   }, [windowWidth]);
 
   return (
-    <div className="movies-cards">
-      <div
-        className={`movies-cards__list ${
-          isMoviesSavedPage ? "movies-cards__list_type_saved" : ""
-        }`}
-      >
-        {movies.length !== 0 ? (
-          movies
-            .slice(0, visibleItems)
-            .map((movie) => <MoviesCard key={movie.id} movie={movie} />)
-        ) : (
-          <p className="movies-card-list__title">
-            {messageText || "Нужно ввести ключевое слово"}
-          </p>
-        )}
-      </div>
-      {!isMoviesSavedPage && isMoreButtonVisible && (
-        <Button
-          modifier="more"
-          text="Еще"
-          handler={showMoreItems}
-          type="button"
-        />
+    <section className="movies-cards-list">
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <>
+          {movies.length !== 0 ? (
+            <div
+              className={`movies-cards-list__container ${
+                isMoviesSavedPage
+                  ? "movies-cards-list__container_type_saved"
+                  : ""
+              }`}
+            >
+              {movies.slice(0, visibleItems).map((movie) => (
+                <MoviesCard key={movie.id} movie={movie} />
+              ))}
+            </div>
+          ) : (
+            <p className="movies-card-list__title">
+              {messageText || "Нужно ввести ключевое слово"}
+            </p>
+          )}
+          {!isMoviesSavedPage && isMoreButtonVisible && (
+            <Button
+              modifier="more"
+              text="Еще"
+              handler={showMoreItems}
+              type="button"
+            />
+          )}
+        </>
       )}
-    </div>
+    </section>
   );
 };
 

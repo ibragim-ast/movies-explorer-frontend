@@ -111,6 +111,7 @@ const Movies = ({
       <Header isLoggedIn={isLoggedIn} />
       <div className="movies__container">
         <SearchForm
+          isLoading={isLoading}
           values={values}
           errors={errors}
           isValid={isValid}
