@@ -9,7 +9,7 @@ import {
 } from "../../utils/constants";
 import "./MoviesCardList.css";
 
-const MoviesCardList = ({ movies }) => {
+const MoviesCardList = ({ movies, messageText }) => {
   const [visibleItems, setVisibleItems] = useState();
   const location = useLocation();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -65,9 +65,15 @@ const MoviesCardList = ({ movies }) => {
           isMoviesSavedPage ? "movies-cards__list_type_saved" : ""
         }`}
       >
-        {movies.slice(0, visibleItems).map((movie) => (
-          <MoviesCard key={movie.id} movie={movie} />
-        ))}
+        {movies.length !== 0 ? (
+          movies
+            .slice(0, visibleItems)
+            .map((movie) => <MoviesCard key={movie.id} movie={movie} />)
+        ) : (
+          <p className="movies-card-list__title">
+            {messageText || "Нужно ввести ключевое слово"}
+          </p>
+        )}
       </div>
       {!isMoviesSavedPage && isMoreButtonVisible && (
         <Button
