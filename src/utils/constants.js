@@ -1,5 +1,5 @@
 const STACK = ["HTML", "CSS", "JS", "React", "Git", "Express.js", "mongoDB"];
-const MAX_SHORT_MOVIE_DURATION = 52;
+const MAX_SHORT_MOVIE_DURATION = 41;
 
 const ERROR = "Ошибка";
 const ERROR_400 = 400;
