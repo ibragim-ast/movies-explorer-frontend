@@ -10,12 +10,22 @@ const Profile = ({
   handleChange,
   isValid,
   setValues,
+  setIsValid,
   onLogout,
   isLoggedIn,
+  onSubmit,
+  requestStatus: { message, isSuccess },
+  resetRequestMessage,
 }) => {
   const { name, email } = useContext(CurrentUserContext);
 
   const [isEditing, setIsEditing] = useState(false);
+
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    onSubmit(values);
+    setIsEditing(false);
+  };
 
   const handleEditClick = (evt) => {
     evt.preventDefault();
@@ -26,13 +36,28 @@ const Profile = ({
     setValues({ name, email });
   }, [name, email, setValues]);
 
+  useEffect(() => {
+    if (values.name === name && values.email === email) {
+      setIsValid(false);
+    }
+  }, [email, name, setIsValid, values]);
+
+  useEffect(() => {
+    resetRequestMessage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
       <Header isLoggedIn={isLoggedIn} />
       <main className="profile">
         <section className="profile__container">
-          <h1 className="profile__title">Привет, {values.name}!</h1>
-          <form className="profile__form" name="profile">
+          <h1 className="profile__title">{`Привет, ${name}!`}</h1>
+          <form
+            className="profile__form"
+            name="profile"
+            onSubmit={handleSubmit}
+          >
             <label className="profile__field">
               <span className="profile__label">Имя</span>
               <input
@@ -71,6 +96,13 @@ const Profile = ({
               />
               <span className="profile__error">{errors.email}</span>
             </label>
+            <p
+              className={`profile__request-message ${
+                !isSuccess ? "profile__request-message_type_error" : ""
+              }`}
+            >
+              {message}
+            </p>
             {isEditing && (
               <button
                 className="profile__submit-btn button-hover"

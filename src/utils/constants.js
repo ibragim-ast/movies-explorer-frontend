@@ -17,6 +17,9 @@ const NO_RESULTS_MESSAGE = "Ничего не найдено";
 const REQUEST_ERROR_MESSAGE =
   "Во время запроса произошла ошибка. Возможно, проблема с соединением или сервер недоступен. Подождите немного и попробуйте ещё раз";
 const REQUIRED_AUTH_ERROR_MESSAGE = "Необходима авторизация";
+const UPDATE_USER_INFO_MESSAGE = "Данные успешно обновлены";
+const UPDATE_USER_INFO_ERROR_MESSAGE =
+  "При обновлении профиля произошла ошибка.";
 
 const MOVIES_PER_PAGE_LARGE = 16;
 const MOVIES_PER_PAGE_MIDDLE = 8;
@@ -36,6 +39,8 @@ export {
   NAME_REGEX,
   EMAIL_ALREADY_REGISTERED_MESSAGE,
   INCORRECT_ADD_USER_DATA,
+  UPDATE_USER_INFO_MESSAGE,
+  UPDATE_USER_INFO_ERROR_MESSAGE,
   REG_ERROR_MESSAGE,
   AUTH_ERROR_MESSAGE,
   INVALID_AUTH_DATA_ERROR_MESSAGE,

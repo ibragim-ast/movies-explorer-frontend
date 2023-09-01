@@ -25,11 +25,20 @@ import {
   AUTH_ERROR_MESSAGE,
   INVALID_AUTH_DATA_ERROR_MESSAGE,
   REQUIRED_AUTH_ERROR_MESSAGE,
+  UPDATE_USER_INFO_MESSAGE,
+  UPDATE_USER_INFO_ERROR_MESSAGE,
 } from "../../utils/constants";
 
 function App() {
-  const { values, errors, handleChange, isValid, setValues, resetForm } =
-    useFormValidator();
+  const {
+    values,
+    errors,
+    handleChange,
+    isValid,
+    setValues,
+    setIsValid,
+    resetForm,
+  } = useFormValidator();
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
@@ -37,9 +46,19 @@ function App() {
   const [authErrorMessage, setAuthErrorMessage] = useState("");
   const [regErrorMessage, setRegErrorMessage] = useState("");
   const [savedMovies, setSavedMovies] = useState([]);
+  const [updateUserInfo, setUpdateUserInfo] = useState({
+    message: "",
+    isSuccess: true,
+  });
 
   const navigate = useNavigate();
   const { pathname } = useLocation;
+
+  const resetMessages = () => {
+    setRegErrorMessage("");
+    setAuthErrorMessage("");
+    setUpdateUserInfo({ message: "", isSuccess: true });
+  };
 
   const tokenCheck = useCallback(() => {
     const jwt = localStorage.getItem("jwt");
@@ -125,6 +144,34 @@ function App() {
       });
   };
 
+  const handleUpdateUserInfo = (userInfo) => {
+    setUpdateUserInfo({ message: "", isSuccess: true });
+
+    mainApi
+      .updateUserInfo(userInfo)
+      .then((user) => {
+        setCurrentUser(user);
+        setUpdateUserInfo({
+          message: UPDATE_USER_INFO_MESSAGE,
+          isSuccess: true,
+        });
+      })
+      .catch((error) => {
+        if (error === ERROR_409) {
+          setUpdateUserInfo({
+            message: EMAIL_ALREADY_REGISTERED_MESSAGE,
+            isSuccess: false,
+          });
+        } else {
+          setUpdateUserInfo({
+            message: UPDATE_USER_INFO_ERROR_MESSAGE,
+            isSuccess: false,
+          });
+        }
+        console.log(`${ERROR}: ${error}`);
+      });
+  };
+
   const handleLogout = () => {
     setIsLoggedIn(false);
     navigate("/", { replace: true });
@@ -206,8 +253,12 @@ function App() {
                     errors={errors}
                     handleChange={handleChange}
                     isValid={isValid}
+                    setIsValid={setIsValid}
                     setValues={setValues}
                     onLogout={handleLogout}
+                    onSubmit={handleUpdateUserInfo}
+                    requestStatus={updateUserInfo}
+                    resetRequestMessage={resetMessages}
                   />
                 </ProtectedRoute>
               }
