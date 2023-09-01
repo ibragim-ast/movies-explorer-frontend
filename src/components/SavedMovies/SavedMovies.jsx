@@ -60,27 +60,29 @@ const SavedMovies = ({
   }, [filterMoviesByName, isShortMovie, requestText, savedMovies]);
 
   return (
-    <main className="saved-movies">
+    <>
       <Header isLoggedIn={isLoggedIn} />
-      <div className="movies__container">
-        <SearchForm
-          values={values}
-          errors={errors}
-          isValid={isValid}
-          setValues={setValues}
-          handleChange={handleChange}
-          onSubmit={handleSearchMovies}
-          onChange={handleCheckbox}
-          isShortMovie={isShortMovie}
-        />
-        <MoviesCardList
-          movies={filteredMovies}
-          messageText={message}
-          onClick={handleDeleteMovie}
-        />
-      </div>
+      <main className="saved-movies">
+        <div className="movies__container">
+          <SearchForm
+            values={values}
+            errors={errors}
+            isValid={isValid}
+            setValues={setValues}
+            handleChange={handleChange}
+            onSubmit={handleSearchMovies}
+            onChange={handleCheckbox}
+            isShortMovie={isShortMovie}
+          />
+          <MoviesCardList
+            movies={filteredMovies}
+            messageText={message}
+            onClick={handleDeleteMovie}
+          />
+        </div>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 };
 
