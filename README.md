@@ -1,5 +1,9 @@
 # Movies Explorer (фронтенд)
 
+[Ссылка на сайт](https://movies-ast.nomoreparties.co)
+[Ссылка на репозиторий](https://github.com/ibragim-ast/movies-explorer-frontend)
+[Ссылка на Pull request](https://github.com/ibragim-ast/movies-explorer-frontend/pull/2)
+
 Макет dark-1
 
 ## Доступные маршруты
