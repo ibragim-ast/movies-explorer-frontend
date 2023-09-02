@@ -103,13 +103,30 @@ function App() {
     }
   }, [isLoggedIn, navigate, pathname, tokenCheck]);
 
+  const handleLogin = (data) => {
+    mainApi
+      .authorize(data)
+      .then((res) => {
+        if (res.token) {
+          localStorage.setItem("jwt", res.token);
+          setIsLoggedIn(true);
+          navigate("/movies", { replace: true });
+        }
+      })
+      .catch((err) => {
+        if (err === ERROR_401) {
+          setAuthErrorMessage(INVALID_AUTH_DATA_ERROR_MESSAGE);
+        } else {
+          setAuthErrorMessage(AUTH_ERROR_MESSAGE);
+        }
+      });
+  };
+
   const handleRegistration = ({ name, email, password }) => {
     mainApi
       .register({ name, email, password })
       .then(() => {
         handleLogin({ email, password });
-        setIsLoggedIn(true);
-        navigate("/movies", { replace: true });
         setCurrentUser({ name, email });
         setRegErrorMessage("");
       })
@@ -121,25 +138,6 @@ function App() {
           setRegErrorMessage(INCORRECT_ADD_USER_DATA);
         } else {
           setRegErrorMessage(REG_ERROR_MESSAGE);
-        }
-      });
-  };
-
-  const handleLogin = (data) => {
-    mainApi
-      .authorize(data)
-      .then((res) => {
-        if (res.token) {
-          localStorage.setItem("jwt", res.token);
-          setIsLoggedIn(true);
-          navigate("/", { replace: true });
-        }
-      })
-      .catch((err) => {
-        if (err === ERROR_401) {
-          setAuthErrorMessage(INVALID_AUTH_DATA_ERROR_MESSAGE);
-        } else {
-          setAuthErrorMessage(AUTH_ERROR_MESSAGE);
         }
       });
   };
