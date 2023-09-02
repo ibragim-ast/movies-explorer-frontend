@@ -1,6 +1,6 @@
 const mainApiSettings = {
-  // baseUrl: "https://api.movies-ast.nomoreparties.co",
-  baseUrl: "http://localhost:3000",
+  baseUrl: "https://api.movies-ast.nomoreparties.co",
+  //baseUrl: "http://localhost:3000",
   headers: {
     "Content-Type": "application/json",
   },

@@ -69,7 +69,6 @@ function App() {
         .then((res) => {
           if (res) {
             setIsLoggedIn(true);
-            navigate("/movies", { replace: true });
           }
         })
         .catch((err) => {
@@ -81,7 +80,7 @@ function App() {
     } else {
       setIsLoading(false);
     }
-  }, [isLoggedIn, navigate]);
+  }, [isLoggedIn]);
 
   useEffect(() => {
     tokenCheck();
