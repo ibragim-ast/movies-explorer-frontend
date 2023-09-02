@@ -1,6 +1,5 @@
 .movies-card {
-  background-color: #222;
-  overflow: hidden;
+  width: 100%;
 }
 
 .movies-card__link {
@@ -9,13 +8,13 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  aspect-ratio: 364/203;
+  aspect-ratio: 270/151;
 }
 
 .movies-card__img {
   display: block;
   width: 100%;
-  aspect-ratio: 364/203;
+  aspect-ratio: 270/151;
   object-fit: cover;
   object-position: center;
 }

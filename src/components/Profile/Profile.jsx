@@ -17,31 +17,38 @@ const Profile = ({
   requestStatus: { message, isSuccess },
   resetRequestMessage,
 }) => {
+  // Используем useContext для доступа к данным текущего пользователя
   const { name, email } = useContext(CurrentUserContext);
 
+  // Состояние для режима редактирования
   const [isEditing, setIsEditing] = useState(false);
 
+  // Обработчик отправки формы
   const handleSubmit = (evt) => {
     evt.preventDefault();
     onSubmit(values);
     setIsEditing(false);
   };
 
+  // Обработчик нажатия на кнопку редактирования
   const handleEditClick = (evt) => {
     evt.preventDefault();
     setIsEditing(!isEditing);
   };
 
+  // Эффект для установки начальных значений из контекста
   useEffect(() => {
     setValues({ name, email });
   }, [name, email, setValues]);
 
+  // Эффект для проверки валидности формы
   useEffect(() => {
     if (values.name === name && values.email === email) {
       setIsValid(false);
     }
   }, [email, name, setIsValid, values]);
 
+  // Эффект для сброса сообщения
   useEffect(() => {
     resetRequestMessage();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -119,7 +126,7 @@ const Profile = ({
                   type="button"
                   onClick={handleEditClick}
                 >
-                  {isEditing ? "Сохранить" : "Редактировать"}{" "}
+                  {isEditing ? "Сохранить" : "Редактировать"}
                 </button>
                 <button
                   className="profile__logout button-hover"
