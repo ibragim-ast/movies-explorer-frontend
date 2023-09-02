@@ -107,6 +107,7 @@ function App() {
     mainApi
       .register({ name, email, password })
       .then(() => {
+        handleLogin({ email, password });
         setIsLoggedIn(true);
         navigate("/movies", { replace: true });
         setCurrentUser({ name, email });
