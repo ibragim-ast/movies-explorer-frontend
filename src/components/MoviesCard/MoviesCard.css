@@ -1,4 +1,5 @@
 .movies-card {
+  max-width: 270px;
   width: 100%;
 }
 
@@ -99,6 +100,9 @@
 }
 
 @media (max-width: 768px) {
+  .movies-card {
+    max-width: 339px;
+  }
   .movies-card__link {
     aspect-ratio: 339/190;
   }
