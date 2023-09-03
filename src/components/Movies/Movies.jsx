@@ -75,6 +75,7 @@ const Movies = ({
         .then((movies) => {
           localStorage.setItem("allMovies", JSON.stringify(movies));
           handleFilterMovies(movies, req, isShort);
+          setIsLoading(false);
         })
         .catch((error) => {
           setMessage(REQUEST_ERROR_MESSAGE);
@@ -83,11 +84,11 @@ const Movies = ({
         });
     } else {
       handleFilterMovies(allMovies, req, isShort);
+      setIsLoading(false);
     }
 
     localStorage.setItem("request", req);
     localStorage.setItem("isShortMovie", isShort);
-    setIsLoading(false);
   };
 
   useEffect(() => {
