@@ -295,6 +295,7 @@ function App() {
                     savedMovies={savedMovies}
                     onDeleteMovie={handleDeleteMovie}
                     filterMoviesByName={filterMoviesByName}
+                    filterShortMovies={filterShortMovies}
                   />
                 </ProtectedRoute>
               }

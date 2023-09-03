@@ -19,6 +19,7 @@ const SavedMovies = ({
   savedMovies,
   onDeleteMovie,
   filterMoviesByName,
+  filterShortMovies,
 }) => {
   const [message, setMessage] = useState("");
   const [filteredMovies, setFilteredMovies] = useState([]);
@@ -53,11 +54,19 @@ const SavedMovies = ({
       if (filteredFilms.length === 0) {
         setMessage(NO_RESULTS_MESSAGE);
       }
-      setFilteredMovies(filteredFilms);
+      setFilteredMovies(
+        isShortMovie ? filterShortMovies(filteredFilms) : filteredFilms
+      );
       return;
     }
     setMessage(REQUEST_ERROR_MESSAGE);
-  }, [filterMoviesByName, isShortMovie, requestText, savedMovies]);
+  }, [
+    filterMoviesByName,
+    filterShortMovies,
+    isShortMovie,
+    requestText,
+    savedMovies,
+  ]);
 
   return (
     <>
