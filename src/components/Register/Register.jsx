@@ -1,5 +1,8 @@
 import AuthPage from "../AuthPage/AuthPage";
 import CTA from "../CTA/CTA";
+import useAuthRedirect from "../../hooks/useAuthRedirect";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { NAME_REGEX, EMAIL_REGEX } from "../../utils/constants";
 
 const Register = ({
@@ -10,7 +13,19 @@ const Register = ({
   onSubmit,
   resetForm,
   requestErrorMessage,
+  isLoggedIn,
 }) => {
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+  const navigate = useNavigate();
+
+  useAuthRedirect(isLoggedIn, setShouldRedirect);
+
+  useEffect(() => {
+    if (shouldRedirect) {
+      navigate("/");
+    }
+  }, [navigate, shouldRedirect]);
+
   const registerInputs = [
     {
       label: "Имя",

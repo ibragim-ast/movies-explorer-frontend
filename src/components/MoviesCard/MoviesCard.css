@@ -93,16 +93,6 @@
 .movies-card:hover .movies-card__delete-btn {
   opacity: 1;
 }
-/* 
-@media screen and (hover: hover) {
-  .movies-card__delete-btn {
-    opacity: 0;
-  } */
-
-/* .movies-card__desc_type_saved-movies:hover .movies-card__delete-btn {
-    opacity: 1;
-  }
-} */
 
 @media (max-width: 768px) {
   .movies-card {

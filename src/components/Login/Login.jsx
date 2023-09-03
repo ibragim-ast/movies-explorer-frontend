@@ -1,5 +1,8 @@
 import CTA from "../CTA/CTA";
 import AuthPage from "../AuthPage/AuthPage";
+import useAuthRedirect from "../../hooks/useAuthRedirect";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { EMAIL_REGEX } from "../../utils/constants";
 
 const Login = ({
@@ -10,7 +13,19 @@ const Login = ({
   onSubmit,
   resetForm,
   requestErrorMessage,
+  isLoggedIn,
 }) => {
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+  const navigate = useNavigate();
+
+  useAuthRedirect(isLoggedIn, setShouldRedirect);
+
+  useEffect(() => {
+    if (shouldRedirect) {
+      navigate("/");
+    }
+  }, [navigate, shouldRedirect]);
+
   const loginInputs = [
     {
       label: "E-mail",

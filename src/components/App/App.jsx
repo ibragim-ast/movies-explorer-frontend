@@ -311,6 +311,7 @@ function App() {
                   onSubmit={handleRegistration}
                   resetForm={resetForm}
                   requestErrorMessage={regErrorMessage}
+                  isLoggedIn={isLoggedIn}
                 />
               }
             />
@@ -325,6 +326,7 @@ function App() {
                   onSubmit={handleLogin}
                   resetForm={resetForm}
                   requestErrorMessage={authErrorMessage}
+                  isLoggedIn={isLoggedIn}
                 />
               }
             />
