@@ -53,18 +53,20 @@ const MoviesCardList = ({ movies, messageText, savedMovies, onClick }) => {
   }, [handleResize]);
 
   useEffect(() => {
-    const checkWindowWidth = () => {
-      if (windowWidth >= 1280) {
-        setVisibleItems(MOVIES_PER_PAGE_LARGE);
-      } else if (windowWidth >= 768) {
-        setVisibleItems(MOVIES_PER_PAGE_MIDDLE);
-      } else {
-        setVisibleItems(MOVIES_PER_PAGE_SMALL);
-      }
-    };
+    if (!isMoviesSavedPage) {
+      const checkWindowWidth = () => {
+        if (windowWidth >= 1280) {
+          setVisibleItems(MOVIES_PER_PAGE_LARGE);
+        } else if (windowWidth >= 768) {
+          setVisibleItems(MOVIES_PER_PAGE_MIDDLE);
+        } else {
+          setVisibleItems(MOVIES_PER_PAGE_SMALL);
+        }
+      };
 
-    checkWindowWidth();
-  }, [windowWidth, movies.length]);
+      checkWindowWidth();
+    }
+  }, [windowWidth, movies.length, isMoviesSavedPage]);
 
   return (
     <section className="movies-cards-list">
