@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import FitterCheckbox from "../FilterCheckbox/FitterCheckbox";
 import Button from "../Button/Button";
@@ -18,7 +18,7 @@ const SearchForm = ({
   // Получаем текущий путь из react-router-dom
   const { pathname } = useLocation();
   // Проверяем, находимся ли мы на странице "Сохраненные фильмы"
-  const isSavedMovies = pathname === "/saved-movies";
+  const isSavedMoviesPage = pathname === "/saved-movies";
 
   // Обработчик отправки формы поиска
   const handleSearch = (evt) => {
@@ -28,13 +28,15 @@ const SearchForm = ({
 
   // Эффект для автозаполнения поля поиска из localStorage
   useEffect(() => {
-    if (!isSavedMovies) {
+    if (!isSavedMoviesPage) {
       const savedSearch = localStorage.getItem("request");
       if (savedSearch) {
         setValues({ search: savedSearch });
       }
+    } else {
+      setValues("");
     }
-  }, [isSavedMovies, setValues]);
+  }, [isSavedMoviesPage, setValues]);
 
   return (
     <section>
