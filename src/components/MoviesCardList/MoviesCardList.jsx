@@ -20,9 +20,9 @@ const MoviesCardList = ({ movies, messageText, savedMovies, onClick }) => {
   const showMoreItems = () => {
     if (windowWidth >= 1280) {
       setVisibleItems((prev) => prev + 4);
-    } else if (windowWidth >= 768) {
-      setVisibleItems((prev) => prev + 4);
-    } else {
+    } else if (windowWidth >= 768 && windowWidth < 1280) {
+      setVisibleItems((prev) => prev + 2);
+    } else if (windowWidth >= 320 && windowWidth < 768) {
       setVisibleItems((prev) => prev + 2);
     }
   };
@@ -40,7 +40,7 @@ const MoviesCardList = ({ movies, messageText, savedMovies, onClick }) => {
 
     const timer = setTimeout(() => {
       setWindowWidth(window.innerWidth);
-    }, 300);
+    }, 100);
 
     setResizeTimer(timer);
   }, [resizeTimer]);
@@ -64,7 +64,7 @@ const MoviesCardList = ({ movies, messageText, savedMovies, onClick }) => {
     };
 
     checkWindowWidth();
-  }, [windowWidth]);
+  }, [windowWidth, movies.length]);
 
   return (
     <section className="movies-cards-list">
