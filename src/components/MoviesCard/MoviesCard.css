@@ -83,10 +83,11 @@
   cursor: pointer;
 }
 
-.movies-card__delete-btn:hover {
+.movies-card:hover .movies-card__delete-btn {
   background-image: url("../../assets/images/delete-icon.svg");
   transition: background 0.3s, opacity 0.3s;
   background-color: #313131;
+  opacity: 1;
 }
 
 @media screen and (hover: hover) {
