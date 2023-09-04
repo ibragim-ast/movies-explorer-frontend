@@ -6,6 +6,9 @@ import {
   MOVIES_PER_PAGE_LARGE,
   MOVIES_PER_PAGE_MIDDLE,
   MOVIES_PER_PAGE_SMALL,
+  BREAKPOINT_LARGE,
+  BREAKPOINT_MEDIUM,
+  BREAKPOINT_SMALL,
 } from "../../utils/constants";
 import "./MoviesCardList.css";
 
@@ -18,11 +21,17 @@ const MoviesCardList = ({ movies, messageText, savedMovies, onClick }) => {
   const isMoreButtonVisible = visibleItems < movies.length;
 
   const showMoreItems = () => {
-    if (windowWidth >= 1280) {
+    if (windowWidth >= BREAKPOINT_LARGE) {
       setVisibleItems((prev) => prev + 4);
-    } else if (windowWidth >= 768 && windowWidth < 1280) {
+    } else if (
+      windowWidth >= BREAKPOINT_MEDIUM &&
+      windowWidth < BREAKPOINT_LARGE
+    ) {
       setVisibleItems((prev) => prev + 2);
-    } else if (windowWidth >= 320 && windowWidth < 768) {
+    } else if (
+      windowWidth >= BREAKPOINT_SMALL &&
+      windowWidth < BREAKPOINT_MEDIUM
+    ) {
       setVisibleItems((prev) => prev + 2);
     }
   };
@@ -55,9 +64,9 @@ const MoviesCardList = ({ movies, messageText, savedMovies, onClick }) => {
   useEffect(() => {
     if (!isMoviesSavedPage) {
       const checkWindowWidth = () => {
-        if (windowWidth >= 1280) {
+        if (windowWidth >= BREAKPOINT_LARGE) {
           setVisibleItems(MOVIES_PER_PAGE_LARGE);
-        } else if (windowWidth >= 768) {
+        } else if (windowWidth >= BREAKPOINT_MEDIUM) {
           setVisibleItems(MOVIES_PER_PAGE_MIDDLE);
         } else {
           setVisibleItems(MOVIES_PER_PAGE_SMALL);
