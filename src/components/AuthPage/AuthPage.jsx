@@ -3,6 +3,7 @@ import logo from "../../assets/images/logo.svg";
 import Input from "../Input/Input";
 import Button from "../Button/Button";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const AuthPage = ({
   title,
@@ -17,10 +18,16 @@ const AuthPage = ({
   onSubmit,
   requestErrorMessage,
 }) => {
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    onSubmit(values);
-    resetForm();
+    setIsLoading(true);
+
+    onSubmit(values, () => {
+      resetForm();
+      setIsLoading(false);
+    });
   };
 
   return (
@@ -57,7 +64,7 @@ const AuthPage = ({
         <Button
           modifier={buttonModifier}
           text={buttonText}
-          disabled={!isValid}
+          disabled={!isValid || isLoading}
         />
       </form>
     </section>

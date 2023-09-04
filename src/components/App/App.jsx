@@ -103,7 +103,7 @@ function App() {
     }
   }, [isLoggedIn, navigate, pathname, tokenCheck]);
 
-  const handleLogin = (data) => {
+  const handleLogin = (data, resetForm) => {
     mainApi
       .authorize(data)
       .then((res) => {
@@ -111,6 +111,7 @@ function App() {
           localStorage.setItem("jwt", res.token);
           setIsLoggedIn(true);
           navigate("/movies", { replace: true });
+          resetForm();
         }
       })
       .catch((err) => {
@@ -129,6 +130,7 @@ function App() {
         handleLogin({ email, password });
         setCurrentUser({ name, email });
         setRegErrorMessage("");
+        resetForm();
       })
       .catch((err) => {
         console.log("register-error:", err);
