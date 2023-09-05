@@ -27,6 +27,9 @@
 }
 
 @media (max-width: 414px) {
+  .auth-links__link {
+    margin-left: 14px;
+  }
   .auth-links {
     gap: 0;
   }

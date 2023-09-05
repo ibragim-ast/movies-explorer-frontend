@@ -1,7 +1,31 @@
 import AuthPage from "../AuthPage/AuthPage";
 import CTA from "../CTA/CTA";
+import useAuthRedirect from "../../hooks/useAuthRedirect";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { NAME_REGEX, EMAIL_REGEX } from "../../utils/constants";
 
-const Register = ({ values, errors, handleChange, isValid }) => {
+const Register = ({
+  values,
+  errors,
+  handleChange,
+  isValid,
+  onSubmit,
+  resetForm,
+  requestErrorMessage,
+  isLoggedIn,
+}) => {
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+  const navigate = useNavigate();
+
+  useAuthRedirect(isLoggedIn, setShouldRedirect);
+
+  useEffect(() => {
+    if (shouldRedirect) {
+      navigate("/");
+    }
+  }, [navigate, shouldRedirect]);
+
   const registerInputs = [
     {
       label: "Имя",
@@ -9,9 +33,10 @@ const Register = ({ values, errors, handleChange, isValid }) => {
       name: "name",
       placeholder: "Имя",
       required: true,
-      minLength: 8,
+      minLength: 2,
       maxLength: 30,
       autoComplete: "off",
+      pattern: NAME_REGEX,
     },
     {
       label: "E-mail",
@@ -20,6 +45,7 @@ const Register = ({ values, errors, handleChange, isValid }) => {
       placeholder: "E-mail",
       required: true,
       autoComplete: "off",
+      pattern: EMAIL_REGEX,
     },
     {
       label: "Пароль",
@@ -44,7 +70,10 @@ const Register = ({ values, errors, handleChange, isValid }) => {
         values={values}
         errors={errors}
         handleChange={handleChange}
+        resetForm={resetForm}
         isValid={isValid}
+        onSubmit={onSubmit}
+        requestErrorMessage={requestErrorMessage}
       />
       <CTA text="Уже зарегистрированы?" linkText="Войти" to="/signin" />
     </main>

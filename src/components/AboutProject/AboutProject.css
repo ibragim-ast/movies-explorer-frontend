@@ -95,7 +95,7 @@
     max-width: 87%;
   }
   .about-project__cards-container {
-    column-gap: 40px;
+    column-gap: 37px;
   }
   .about-project__card-text {
     margin-top: 21px;
@@ -106,16 +106,16 @@
     margin-top: 94px;
   }
   .about-project__info_type_one-week {
-    width: 21.2%;
+    width: 21%;
   }
   .about-project__info_type_four-week {
-    width: 78.8%;
+    width: 79%;
   }
   .about-project__fullstack_type_back {
-    width: 21.2%;
+    width: 21%;
   }
   .about-project__fullstack_type_front {
-    width: 78.8%;
+    width: 79%;
   }
 }
 
@@ -127,7 +127,7 @@
   .about-project__cards-container {
     flex-direction: column;
     row-gap: 57px;
-    margin-top: 58px;
+    margin-top: 62px;
   }
   .about-project__card {
     margin-top: 0;

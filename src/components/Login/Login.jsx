@@ -1,7 +1,31 @@
 import CTA from "../CTA/CTA";
 import AuthPage from "../AuthPage/AuthPage";
+import useAuthRedirect from "../../hooks/useAuthRedirect";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { EMAIL_REGEX } from "../../utils/constants";
 
-const Login = ({ values, errors, handleChange, isValid }) => {
+const Login = ({
+  values,
+  errors,
+  handleChange,
+  isValid,
+  onSubmit,
+  resetForm,
+  requestErrorMessage,
+  isLoggedIn,
+}) => {
+  const [shouldRedirect, setShouldRedirect] = useState(false);
+  const navigate = useNavigate();
+
+  useAuthRedirect(isLoggedIn, setShouldRedirect);
+
+  useEffect(() => {
+    if (shouldRedirect) {
+      navigate("/");
+    }
+  }, [navigate, shouldRedirect]);
+
   const loginInputs = [
     {
       label: "E-mail",
@@ -10,6 +34,7 @@ const Login = ({ values, errors, handleChange, isValid }) => {
       name: "email",
       required: true,
       autoComplete: "off",
+      pattern: EMAIL_REGEX,
     },
     {
       label: "Пароль",
@@ -23,6 +48,10 @@ const Login = ({ values, errors, handleChange, isValid }) => {
     },
   ];
 
+  const handleLogin = (values) => {
+    onSubmit(values);
+  };
+
   return (
     <main>
       <AuthPage
@@ -34,6 +63,9 @@ const Login = ({ values, errors, handleChange, isValid }) => {
         errors={errors}
         handleChange={handleChange}
         isValid={isValid}
+        onSubmit={handleLogin}
+        resetForm={resetForm}
+        requestErrorMessage={requestErrorMessage}
       />
       <CTA
         text="Еще не зарегистрированы?"

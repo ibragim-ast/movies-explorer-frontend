@@ -72,9 +72,11 @@
     font-size: 12px;
     line-height: 18px;
     max-width: 329px;
+    padding-bottom: 75px;
   }
   .student__photo {
-    max-width: 253px;
+    max-width: 255px;
+    margin-top: 67px;
   }
 }
 
@@ -107,7 +109,7 @@
     font-size: 11px;
     line-height: 16px;
     padding-right: 0;
-    margin-bottom: 40px;
+    margin-bottom: 38px;
     padding-bottom: 0;
   }
 }

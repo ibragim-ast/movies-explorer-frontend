@@ -12,6 +12,7 @@ const Input = ({
   minLength,
   maxLength,
   autoComplete,
+  pattern,
 }) => {
   return (
     <div className="input">
@@ -27,6 +28,7 @@ const Input = ({
         maxLength={maxLength}
         required={required}
         autoComplete={autoComplete}
+        pattern={pattern}
       />
       <span className="input__error">{error}</span>
     </div>

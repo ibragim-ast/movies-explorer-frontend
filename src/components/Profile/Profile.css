@@ -123,8 +123,22 @@
   line-height: 16px;
   font-weight: 400;
   width: max-content;
-  margin-top: 204px;
+  margin-top: 140px;
   transition: background-color 0.3s, padding 0.3s, opacity 0.3s;
+}
+
+.profile__request-message {
+  color: #b6cdc1;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  margin: 50px 0 0;
+  min-height: 12px;
+  transition: margin 0.3s;
+}
+
+.profile__request-message_type_error {
+  color: #ee3465;
 }
 
 .profile__submit-btn {
@@ -172,7 +186,7 @@
   }
 
   .profile__edit-btn {
-    margin-top: 194px;
+    margin-top: 130px;
   }
 }
 
@@ -197,7 +211,7 @@
   .profile__edit-btn {
     font-size: 12px;
     line-height: 15px;
-    margin-top: auto;
+    margin-top: 299px;
   }
 
   .profile__logout {

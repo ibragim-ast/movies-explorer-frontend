@@ -21,6 +21,15 @@
   margin: 0;
 }
 
+.auth-page__request-error {
+  color: #ee3465;
+  font-size: 10px;
+  line-height: 12px;
+  font-weight: 400;
+  margin: auto 0 0px;
+  min-height: 12px;
+}
+
 @media (max-width: 768px) {
   .auth-page {
     margin-top: 233px;
@@ -35,7 +44,7 @@
   }
   .auth-page__form {
     width: 100%;
-    margin-top: 49px;
+    margin-top: 46px;
   }
   .auth-page__title {
     text-align: center;
