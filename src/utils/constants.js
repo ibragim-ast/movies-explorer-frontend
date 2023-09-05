@@ -27,7 +27,7 @@ const MOVIES_PER_PAGE_SMALL = 5;
 
 const BREAKPOINT_LARGE = 1280;
 const BREAKPOINT_MEDIUM = 768;
-const BREAKPOINT_SMALL = 320;
+const BREAKPOINT_SMALL = 480;
 
 const EMAIL_REGEX = "^[a-zA-Z0-9+_.\\-]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]{2,4}$";
 const NAME_REGEX = "[A-Za-zА-Яа-яЁё\\s\\-]+";

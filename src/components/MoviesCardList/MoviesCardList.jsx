@@ -27,11 +27,8 @@ const MoviesCardList = ({ movies, messageText, savedMovies, onClick }) => {
       windowWidth >= BREAKPOINT_MEDIUM &&
       windowWidth < BREAKPOINT_LARGE
     ) {
-      setVisibleItems((prev) => prev + 2);
-    } else if (
-      windowWidth >= BREAKPOINT_SMALL &&
-      windowWidth < BREAKPOINT_MEDIUM
-    ) {
+      setVisibleItems((prev) => prev + 4);
+    } else if (windowWidth <= BREAKPOINT_MEDIUM) {
       setVisibleItems((prev) => prev + 2);
     }
   };
@@ -66,7 +63,7 @@ const MoviesCardList = ({ movies, messageText, savedMovies, onClick }) => {
       const checkWindowWidth = () => {
         if (windowWidth >= BREAKPOINT_LARGE) {
           setVisibleItems(MOVIES_PER_PAGE_LARGE);
-        } else if (windowWidth >= BREAKPOINT_MEDIUM) {
+        } else if (windowWidth >= BREAKPOINT_SMALL) {
           setVisibleItems(MOVIES_PER_PAGE_MIDDLE);
         } else {
           setVisibleItems(MOVIES_PER_PAGE_SMALL);

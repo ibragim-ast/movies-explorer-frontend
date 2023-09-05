@@ -40,6 +40,8 @@
   font-size: 13px;
   line-height: 16px;
   font-weight: 500;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .movies-card__duration {
