@@ -37,6 +37,7 @@ const Movies = ({
   // Обработчик для изменения чекбокса короткометражки
   const handleCheckBox = () => {
     setIsShortMovie(!isShortMovie);
+    localStorage.setItem("isShortMovie", JSON.stringify(!isShortMovie));
   };
 
   // Функция для фильтрации и сохранения отфильтрованных фильмов

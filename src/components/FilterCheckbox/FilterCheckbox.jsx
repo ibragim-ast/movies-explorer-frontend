@@ -1,6 +1,6 @@
-import "./FitterCheckbox.css";
+import "./FilterCheckbox.css";
 
-const FitterCheckbox = ({ onChange, value }) => {
+const FilterCheckbox = ({ onChange, value }) => {
   return (
     <div className="filter-checkbox">
       <input
@@ -18,4 +18,4 @@ const FitterCheckbox = ({ onChange, value }) => {
   );
 };
 
-export default FitterCheckbox;
+export default FilterCheckbox;

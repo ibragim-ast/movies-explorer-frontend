@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import FitterCheckbox from "../FilterCheckbox/FitterCheckbox";
+import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import Button from "../Button/Button";
 import searchIcon from "../../assets/images/search-icon.svg";
 import "./SearchForm.css";
@@ -70,7 +70,7 @@ const SearchForm = ({
           />
 
           <span className="search-form__line"></span>
-          <FitterCheckbox onChange={onChange} value={isShortMovie} />
+          <FilterCheckbox onChange={onChange} value={isShortMovie} />
         </div>
 
         <span className="search-form__error">{errors.search}</span>
